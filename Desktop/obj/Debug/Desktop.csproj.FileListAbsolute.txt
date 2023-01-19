@@ -17,3 +17,4 @@ F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.GenerateResource
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.CoreCompileInputs.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.exe
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.pdb
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\App.baml

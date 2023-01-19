@@ -1,0 +1,240 @@
+﻿<Window x:Class="Desktop.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Desktop"
+        mc:Ignorable="d"
+        Title="Registration" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="48"></RowDefinition>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition Height="62"></RowDefinition>
+            <RowDefinition Height="62"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel 
+            Grid.Column="0" 
+            Grid.Row="0" 
+            Grid.RowSpan="11">
+
+            <Image Height="148" Width="149" Margin="70, 70, 0, 0" Source="images/logo.png" />
+        </WrapPanel>
+
+        <WrapPanel 
+            Grid.Column="1" Grid.Row="0" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom">
+
+            <TextBlock 
+                Margin="1,0,0,0" 
+                Text="Welcome back" 
+                FontSize="36" 
+                Foreground="#313131" 
+                Style="{StaticResource CustomFontTextBlock}"/>
+        </WrapPanel>
+
+        <WrapPanel
+            Grid.Column="1" 
+            Grid.Row="1" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom">
+
+            <TextBlock 
+                Margin="1,0,0,0" 
+                Text="Имя пользователя" 
+                FontSize="24" 
+                Foreground="#313131" 
+                Style="{StaticResource CustomFontTextBlock}"/>
+        </WrapPanel>
+
+        <WrapPanel 
+            Grid.Column="1" 
+            Grid.Row="2"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+            
+            <TextBox
+                Name="TextNameUser"
+                Width="340" 
+                Height="30" 
+                Text="Введите имя пользователя"
+                GotFocus="TextNameUser_OnGotFocus"
+                LostFocus="TextNameUser_OnLostFocus"
+                FontSize="20"
+                Style="{StaticResource CustomFontTextBox}"
+                Foreground="#C6C6C6"
+                BorderThickness="0, 0, 0, 1"/>
+
+        </WrapPanel>
+
+        <WrapPanel
+            Grid.Column="1" 
+            Grid.Row="3" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom">
+
+            <TextBlock 
+                Margin="1,0,0,0" 
+                Text="Ваша почта" 
+                FontSize="24" 
+                Foreground="#313131" 
+                Style="{StaticResource CustomFontTextBlock}"/>
+            
+        </WrapPanel>
+
+        <WrapPanel 
+            Grid.Column="1" 
+            Grid.Row="4"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+            
+            <TextBox
+                Name="TextEmail"
+                Width="340" 
+                Height="30" 
+                Text="exam@yandex.ru"
+                GotFocus="TextEmail_OnGotFocus"
+                LostFocus="TextEmail_OnLostFocus"
+                FontSize="20"
+                Style="{StaticResource CustomFontTextBox}"
+                Foreground="#C6C6C6"
+                BorderThickness="0, 0, 0, 1"/>
+
+        </WrapPanel>
+
+        <WrapPanel
+            Grid.Column="1" 
+            Grid.Row="5" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom">
+
+            <TextBlock 
+                Margin="1,0,0,0" 
+                Text="Пароль" 
+                FontSize="24" 
+                Foreground="#313131" 
+                Style="{StaticResource CustomFontTextBlock}"/>
+        </WrapPanel>
+
+        <WrapPanel 
+            Grid.Column="1" 
+            Grid.Row="6"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+
+            <TextBox 
+                Name="TextPassword"
+                Width="340" 
+                Height="30" 
+                Text="Введите пароль"
+                GotFocus="TextPassword_OnGotFocus"
+                LostFocus="TextPassword_OnLostFocus"
+                FontSize="20"
+                Style="{StaticResource CustomFontTextBox}"
+                Foreground="#C6C6C6"
+                BorderThickness="0, 0, 0, 1"/>
+
+        </WrapPanel>
+
+        <WrapPanel
+            Grid.Column="1" 
+            Grid.Row="7" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom">
+
+            <TextBlock 
+                Margin="1,0,0,0" 
+                Text="Повторите пароль" 
+                FontSize="24" 
+                Foreground="#313131" 
+                Style="{StaticResource CustomFontTextBlock}"/>
+        </WrapPanel>
+
+        <WrapPanel 
+            Grid.Column="1" 
+            Grid.Row="8"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+
+            <TextBox
+                Name="TextConfirmPassword"
+                Width="340" 
+                Height="30" 
+                Text="Повторите пароль"
+                GotFocus="TextConfirmPassword_OnGotFocus"
+                LostFocus="TextConfirmPassword_OnLostFocus"
+                FontSize="20"
+                Style="{StaticResource CustomFontTextBox}"
+                Foreground="#C6C6C6"
+                BorderThickness="0, 0, 0, 1"/>
+
+        </WrapPanel>
+
+        <WrapPanel 
+            Grid.Column="1" 
+            Grid.Row="9" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+
+            <Button
+                Height="53" 
+                Width="335"
+                Margin="5"
+                Background="#F96060"
+                BorderBrush="#F96060"
+                Content="Зарегистрироваться"
+                FontSize="24"
+                Foreground="White"
+                Style="{StaticResource CustomFontContentButton}">
+                
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20, 20, 5, 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+        </WrapPanel>
+
+        <WrapPanel
+            Grid.Column="1" 
+            Grid.Row="10" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center">
+
+            <Button
+                Height="53" 
+                Width="335"
+                Margin="5"
+                Background="#F96060"
+                BorderBrush="#F96060"
+                Content="Назад"
+                FontSize="24"
+                Foreground="White"
+                Style="{StaticResource CustomFontContentButton}">
+                
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5, 5, 20, 20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+        </WrapPanel>
+    </Grid>
+</Window>

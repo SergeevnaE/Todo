@@ -50,10 +50,10 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
-        <Compile Include="Registration.xaml.cs">
-          <DependentUpon>Registration.xaml</DependentUpon>
+        <Compile Include="RegistrationWindow.xaml.cs">
+          <DependentUpon>RegistrationWindow.xaml</DependentUpon>
         </Compile>
-        <Page Include="MainWindow.xaml">
+        <Page Include="LoginWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </Page>
@@ -61,11 +61,11 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="MainWindow.xaml.cs">
-            <DependentUpon>MainWindow.xaml</DependentUpon>
+        <Compile Include="LoginWindow.xaml.cs">
+            <DependentUpon>LoginWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Page Include="Registration.xaml" />
+        <Page Include="RegistrationWindow.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -85,6 +85,7 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="fonts\actor.ttf" />
       <Content Include="images\logo.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

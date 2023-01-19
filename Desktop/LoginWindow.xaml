@@ -13,18 +13,17 @@
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="111"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="140"></RowDefinition>
             <RowDefinition Height="55"></RowDefinition>
             <RowDefinition Height="54"></RowDefinition>
             <RowDefinition Height="49"></RowDefinition>
             <RowDefinition Height="38"></RowDefinition>
-            <RowDefinition Height="62"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <WrapPanel 
-            Orientation="Horizontal"
+        <WrapPanel
             Grid.RowSpan="8"
             Grid.Column="0" 
             Grid.Row="0">
@@ -33,7 +32,7 @@
                 Height="150" 
                 Width="150" 
                 Margin="70, 70, 0, 0" 
-                Source="images/logo.png" />
+                Source="/images/logo.png" />
 
         </WrapPanel>
 
@@ -46,8 +45,8 @@
                 Margin="1,0,0,0" 
                 Text="Добро пожаловать!" 
                 FontSize="36" 
-                Foreground="#313131" 
-                FontFamily="Actor"/>
+                Foreground="#313131"
+                Style="{StaticResource CustomFontTextBlock}"/>
         </WrapPanel>
 
         <WrapPanel
@@ -61,30 +60,29 @@
                 Margin="1,0,0,0" 
                 Text="Почта" 
                 FontSize="28" 
-                Foreground="#313131" 
-                FontFamily="Actor"/>
+                Style="{StaticResource CustomFontTextBlock}"
+                Foreground="#313131" />
         </WrapPanel>
-
+        
         <WrapPanel 
             Grid.Column="1" 
             Grid.Row="2"
             HorizontalAlignment="Left" 
             VerticalAlignment="Top">
-
-            <Border>
-
-                <TextBox 
-                    Name="textBoxEmail"
-                    Width="300" 
-                    Height="30" 
-                    Text="Введите почту"
-                    FontSize="20"
-                    FontFamily="Actor"
-                    Foreground="#C6C6C6"
-                    BorderThickness="0.8"/>
-
-            </Border>
-
+            
+            <TextBox
+                Name="EnterTheEmail"
+                Width="340" 
+                Height="30" 
+                FontSize="20"
+                Text="Введите почту"
+                Foreground="#C6C6C6"
+                GotFocus="EnterTheEmail_OnGotFocus"
+                LostFocus="EnterTheEmail_OnLostFocus"
+                BorderThickness="0, 0, 0, 1"
+                Style="{StaticResource CustomFontTextBox}">
+            </TextBox>
+            
         </WrapPanel>
 
         <WrapPanel 
@@ -97,8 +95,9 @@
                 Margin="1,0,0,0" 
                 Text="Пароль"
                 FontSize="28" 
-                Foreground="#313131" 
-                FontFamily="Actor"/>
+                Foreground="#313131"
+                Style="{StaticResource CustomFontTextBlock}"/>
+            
         </WrapPanel>
 
         <WrapPanel 
@@ -108,12 +107,17 @@
             VerticalAlignment="Top">
 
             <TextBox 
-                Width="300" 
+                Name="EnterThePassword"
+                Width="340" 
                 Height="30" 
                 Text="Введите пароль"
+                GotFocus="EnterThePassword_OnGotFocus"
+                LostFocus="EnterThePassword_OnLostFocus"
                 FontSize="20"
-                FontFamily="Actor"
-                Foreground="#C6C6C6"/>
+                Foreground="#C6C6C6"
+                BorderThickness="0, 0, 0, 1"
+                Style="{StaticResource CustomFontTextBox}"/>
+            
         </WrapPanel>
 
         <WrapPanel 
@@ -128,35 +132,33 @@
                 Text="Восстановить пароль" 
                 FontSize="24" 
                 Foreground="#313131" 
-                FontFamily="Actor"/>
+                Style="{StaticResource CustomFontTextBlock}"/>
             
         </WrapPanel>
 
         <WrapPanel 
             Grid.Column="1" 
-            Grid.Row="6" 
+            Grid.Row="6"
             HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Bottom">
 
-            <Border 
-                Height="55"
-                Width="327" 
-                CornerRadius="20, 20, 5, 5" 
-                BorderBrush="#F96060" 
-                Background="#F96060" 
-                BorderThickness="1">
-
-                <Button
-                    Height="Auto" 
-                    Width="Auto"
-                    Margin="5"
-                    Background="#F96060"
-                    BorderBrush="#F96060"
-                    Content="Войти"
-                    FontSize="24"
-                    Foreground="White"
-                    FontFamily="Actor"/>
-            </Border>
+            <Button
+                Height="53" 
+                Width="335"
+                Margin="5"
+                Background="{DynamicResource CustomPink}"
+                BorderBrush="{DynamicResource CustomPink}"
+                Content="Войти"
+                FontSize="24"
+                Foreground="White"
+                Style="{StaticResource CustomFontContentButton}">
+                
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20, 20, 5, 5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </WrapPanel>
 
         <WrapPanel 
@@ -166,25 +168,23 @@
             VerticalAlignment="Top" 
             Margin="0, 5, 0, 0">
 
-            <Border 
-                Height="55"
-                Width="327" 
-                CornerRadius="5, 5, 20, 20" 
-                BorderBrush="#F96060" 
-                Background="#F96060" 
-                BorderThickness="1">
-
-                <Button
-                    Height="Auto" 
-                    Width="Auto"
-                    Margin="5"
-                    Background="#F96060"
-                    BorderBrush="#F96060"
-                    Content="Регистрация"
-                    FontSize="24"
-                    Foreground="White"
-                    FontFamily="Actor"/>
-            </Border>
+            <Button
+                Height="53" 
+                Width="335"
+                Margin="5"
+                Background="{DynamicResource CustomPink}"
+                BorderBrush="{DynamicResource CustomPink}"
+                Content="Регистрация"
+                FontSize="24"
+                Foreground="White"
+                Style="{StaticResource CustomFontContentButton}">
+                
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5, 5, 20, 20"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </WrapPanel>
     </Grid>
 </Window>
