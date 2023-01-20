@@ -52,23 +52,27 @@
         </ApplicationDefinition>
         <Compile Include="ExtensionsTextBox.cs" />
         <Compile Include="Manager.cs" />
-        <Compile Include="RegistrationWindow.xaml.cs">
-          <DependentUpon>RegistrationWindow.xaml</DependentUpon>
-        </Compile>
         <Compile Include="Validation.cs" />
-        <Page Include="LoginWindow.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="LoginWindow.xaml.cs">
-            <DependentUpon>LoginWindow.xaml</DependentUpon>
-            <SubType>Code</SubType>
+        <Compile Include="Windows\LoginWindow.xaml.cs">
+          <DependentUpon>LoginWindow.xaml</DependentUpon>
+          <SubType>Code</SubType>
         </Compile>
-        <Page Include="RegistrationWindow.xaml" />
+        <Compile Include="Windows\MainEmptyWindow.xaml.cs">
+          <DependentUpon>MainEmptyWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\RegistrationWindow.xaml.cs">
+          <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+        </Compile>
+        <Page Include="Windows\LoginWindow.xaml">
+          <Generator>MSBuild:Compile</Generator>
+          <SubType>Designer</SubType>
+        </Page>
+        <Page Include="Windows\MainEmptyWindow.xaml" />
+        <Page Include="Windows\RegistrationWindow.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -89,6 +93,7 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="fonts\actor.ttf" />
+      <Resource Include="images\photo_profile.png" />
       <Resource Include="images\logo.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

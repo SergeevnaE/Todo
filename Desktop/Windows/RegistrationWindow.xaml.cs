@@ -1,7 +1,6 @@
 ﻿using System.Windows;
-using System.Windows.Media;
 
-namespace Desktop
+namespace Desktop.Windows
 {
     public partial class RegistrationWindow
     {

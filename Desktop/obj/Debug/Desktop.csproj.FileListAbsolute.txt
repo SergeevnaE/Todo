@@ -14,7 +14,9 @@ F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.CoreCompileInput
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.exe
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.pdb
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\App.baml
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\LoginWindow.g.cs
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\RegistrationWindow.g.cs
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\LoginWindow.baml
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\RegistrationWindow.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\LoginWindow.g.cs
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\MainEmptyWindow.g.cs
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\RegistrationWindow.g.cs
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\LoginWindow.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\MainEmptyWindow.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\RegistrationWindow.baml

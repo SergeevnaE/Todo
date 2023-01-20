@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\TodoDesktopApplication\Todo\Desktop\App.xaml
-2-1707988029
+32099316020
 1-1652688470
-82027722836
+9694109906
 91659208413
-LoginWindow.xaml;RegistrationWindow.xaml;
+Windows\LoginWindow.xaml;Windows\MainEmptyWindow.xaml;Windows\RegistrationWindow.xaml;
 
 False
 

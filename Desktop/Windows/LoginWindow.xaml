@@ -1,4 +1,4 @@
-﻿<Window x:Class="Desktop.LoginWindow"
+﻿<Window x:Class="Desktop.Windows.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -68,6 +68,7 @@
         <WrapPanel 
             Grid.Column="1" 
             Grid.Row="2"
+            Orientation="Vertical"
             HorizontalAlignment="Left" 
             VerticalAlignment="Top">
             
@@ -80,6 +81,13 @@
                 BorderThickness="0, 0, 0, 1"
                 Style="{StaticResource CustomFontTextBox}">
             </TextBox>
+            
+            <TextBlock 
+                Name="ErrorMessageEmail"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0">
+            </TextBlock>
             
         </WrapPanel>
 
@@ -101,6 +109,7 @@
         <WrapPanel 
             Grid.Column="1"
             Grid.Row="4"
+            Orientation="Vertical"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
 
@@ -111,6 +120,13 @@
                 FontSize="20"
                 BorderThickness="0, 0, 0, 1"
                 Style="{StaticResource CustomFontTextBox}"/>
+            
+            <TextBlock 
+                Name="ErrorMessagePassword"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0">
+            </TextBlock>
             
         </WrapPanel>
 
