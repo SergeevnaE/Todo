@@ -3,14 +3,10 @@ F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Desktop.exe
 F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Desktop.pdb
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.AssemblyReference.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.SuggestedBindingRedirects.cache
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\MainWindow.g.cs
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Registration.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\App.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_Content.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_MarkupCompile.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_MarkupCompile.lref
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\MainWindow.baml
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Registration.baml
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.g.resources
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.Properties.Resources.resources
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.GenerateResource.cache
@@ -18,3 +14,7 @@ F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.CoreCompileInput
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.exe
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.pdb
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\App.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\LoginWindow.g.cs
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\RegistrationWindow.g.cs
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\LoginWindow.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\RegistrationWindow.baml

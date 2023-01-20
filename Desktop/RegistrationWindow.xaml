@@ -5,7 +5,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
-        Title="Registration" Height="600" Width="800">
+        Title="Registration" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -72,12 +73,8 @@
                 Name="TextNameUser"
                 Width="340" 
                 Height="30" 
-                Text="Введите имя пользователя"
-                GotFocus="TextNameUser_OnGotFocus"
-                LostFocus="TextNameUser_OnLostFocus"
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
-                Foreground="#C6C6C6"
                 BorderThickness="0, 0, 0, 1"/>
 
         </WrapPanel>
@@ -107,12 +104,8 @@
                 Name="TextEmail"
                 Width="340" 
                 Height="30" 
-                Text="exam@yandex.ru"
-                GotFocus="TextEmail_OnGotFocus"
-                LostFocus="TextEmail_OnLostFocus"
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
-                Foreground="#C6C6C6"
                 BorderThickness="0, 0, 0, 1"/>
 
         </WrapPanel>
@@ -141,12 +134,8 @@
                 Name="TextPassword"
                 Width="340" 
                 Height="30" 
-                Text="Введите пароль"
-                GotFocus="TextPassword_OnGotFocus"
-                LostFocus="TextPassword_OnLostFocus"
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
-                Foreground="#C6C6C6"
                 BorderThickness="0, 0, 0, 1"/>
 
         </WrapPanel>
@@ -175,12 +164,8 @@
                 Name="TextConfirmPassword"
                 Width="340" 
                 Height="30" 
-                Text="Повторите пароль"
-                GotFocus="TextConfirmPassword_OnGotFocus"
-                LostFocus="TextConfirmPassword_OnLostFocus"
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
-                Foreground="#C6C6C6"
                 BorderThickness="0, 0, 0, 1"/>
 
         </WrapPanel>
@@ -218,12 +203,14 @@
             VerticalAlignment="Center">
 
             <Button
+                Name="GoToLogin"
                 Height="53" 
                 Width="335"
                 Margin="5"
                 Background="#F96060"
                 BorderBrush="#F96060"
                 Content="Назад"
+                Click="GoToLogin_OnClick"
                 FontSize="24"
                 Foreground="White"
                 Style="{StaticResource CustomFontContentButton}">

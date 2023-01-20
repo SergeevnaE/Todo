@@ -50,9 +50,12 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="ExtensionsTextBox.cs" />
+        <Compile Include="Manager.cs" />
         <Compile Include="RegistrationWindow.xaml.cs">
           <DependentUpon>RegistrationWindow.xaml</DependentUpon>
         </Compile>
+        <Compile Include="Validation.cs" />
         <Page Include="LoginWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -86,7 +89,7 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="fonts\actor.ttf" />
-      <Content Include="images\logo.png" />
+      <Resource Include="images\logo.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
