@@ -20,3 +20,6 @@ F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\RegistrationWindow.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\LoginWindow.baml
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\MainEmptyWindow.baml
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\RegistrationWindow.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.CopyComplete
+F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Entities.dll
+F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Entities.pdb

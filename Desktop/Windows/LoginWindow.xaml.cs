@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using Entities.Models;
+using Entities.Repository;
 
 namespace Desktop.Windows
 {
@@ -17,6 +19,8 @@ namespace Desktop.Windows
                 ErrorMessageEmail.Text = "";
                 ErrorMessagePassword.Text = "";
                 
+                UserRepository.LoginUser(new UserModel("", EnterTheEmail.Text, EnterThePassword.Text));
+
                 Window window = new MainEmptyWindow();
                 Hide();
                 window.Show();
@@ -26,7 +30,7 @@ namespace Desktop.Windows
                 ErrorMessageEmail.Text = EnterTheEmail.ValidEmail();
                 ErrorMessagePassword.Text = EnterThePassword.ValidPassword();
             }
-            
+
         }
 
         private void GoToRegister_OnClick(object sender, RoutedEventArgs e)

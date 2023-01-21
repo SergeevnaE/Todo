@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using Entities.Models;
+using Entities.Repository;
 
 namespace Desktop.Windows
 {
@@ -26,6 +28,8 @@ namespace Desktop.Windows
                 ErrorTextEmail.Text = "";
                 ErrorTextPassword.Text = "";
                 ErrorTextConfirmPassword.Text = "";
+                
+                UserRepository.RegistrationUser(new UserModel(TextNameUser.Text, TextEmail.Text, TextPassword.Text));
                 
                 Window window = new MainEmptyWindow();
                 Hide();

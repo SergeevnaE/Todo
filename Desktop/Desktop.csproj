@@ -34,7 +34,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="mscorlib" />
         <Reference Include="System" />
+        <Reference Include="System.ComponentModel.DataAnnotations" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
@@ -52,7 +54,6 @@
         </ApplicationDefinition>
         <Compile Include="ExtensionsTextBox.cs" />
         <Compile Include="Manager.cs" />
-        <Compile Include="Validation.cs" />
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -95,6 +96,12 @@
       <Content Include="fonts\actor.ttf" />
       <Resource Include="images\photo_profile.png" />
       <Resource Include="images\logo.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Entities\Entities.csproj">
+        <Project>{646a0856-4d20-4c73-9936-00f6e7cca3bd}</Project>
+        <Name>Entities</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

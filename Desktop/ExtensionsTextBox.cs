@@ -1,7 +1,6 @@
-﻿using System;
-using System.Net.Mail;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Media;
+using System.ComponentModel.DataAnnotations;
 
 namespace Desktop
 {
@@ -9,21 +8,12 @@ namespace Desktop
     {
         public static string ValidEmail(this TextBox tb)
         {
-            try
+            if (new EmailAddressAttribute().IsValid(tb.Text))
             {
-                var address = new MailAddress(tb.Text);
-                if (address.Address == tb.Text && tb.Text.Contains("."))
-                {
-                    tb.BorderBrush = new SolidColorBrush(Colors.Gray);
-                    return null;
-                }
-                else
-                {
-                    tb.BorderBrush = new SolidColorBrush(Colors.Red);
-                    return "Неккоректная почта. Пример: example@yandex.ru";
-                }
+                tb.BorderBrush = new SolidColorBrush(Colors.Gray);
+                return null;
             }
-            catch
+
             {
                 tb.BorderBrush = new SolidColorBrush(Colors.Red);
                 return "Неккоректная почта. Пример: example@yandex.ru";
@@ -68,15 +58,13 @@ namespace Desktop
                     startPassword.BorderBrush = new SolidColorBrush(Colors.Gray);
                     endPassword.BorderBrush = new SolidColorBrush(Colors.Gray);
                     return null;
-                }
-                else
+                } else
                 {
                     startPassword.BorderBrush = new SolidColorBrush(Colors.Red);
                     endPassword.BorderBrush = new SolidColorBrush(Colors.Red);
                     return "Пароли не совпадают";
                 }
-            }
-            else
+            } else
             {
                 endPassword.BorderBrush = new SolidColorBrush(Colors.Gray);
                 return null;
