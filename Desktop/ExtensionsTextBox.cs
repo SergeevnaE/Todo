@@ -30,20 +30,6 @@ namespace Desktop
             }
         }
 
-        public static string ValidPass(this TextBox tb)
-        {
-            if (tb.Text.Length >= 6)
-            {
-                tb.BorderBrush = new SolidColorBrush(Colors.Gray);
-                return null;
-            }
-            else
-            {
-                tb.BorderBrush = new SolidColorBrush(Colors.Red);
-                return "Пароль должен содержать не менее 6 символов";
-            }
-        }
-
         public static string ValidName(this TextBox tb)
         {
             if (tb.Text.Length >= 3)
@@ -54,8 +40,47 @@ namespace Desktop
             else
             {
                 tb.BorderBrush = new SolidColorBrush(Colors.Red);
-                return "Пароль должен содержать не менее 3 символов";
+                return "Имя должно содержать не менее 3 символов";
             }
         }
-}
+        
+        public static string ValidPassword(this TextBox tb)
+        {
+            if (tb.Text.Length >= 6)
+            {  
+                tb.BorderBrush = new SolidColorBrush(Colors.Gray);
+                return null;
+            }
+            else
+            {
+                tb.BorderBrush = new SolidColorBrush(Colors.Red);
+                return "Пароль должен содержать не менее 6 символов";
+            }
+        }
+
+        public static string ValidConfirmPassword(this TextBox endPassword, TextBox startPassword)
+        {
+
+            if (startPassword.ValidPassword() == null)
+            {
+                if (startPassword.Text == endPassword.Text)
+                {
+                    startPassword.BorderBrush = new SolidColorBrush(Colors.Gray);
+                    endPassword.BorderBrush = new SolidColorBrush(Colors.Gray);
+                    return null;
+                }
+                else
+                {
+                    startPassword.BorderBrush = new SolidColorBrush(Colors.Red);
+                    endPassword.BorderBrush = new SolidColorBrush(Colors.Red);
+                    return "Пароли не совпадают";
+                }
+            }
+            else
+            {
+                endPassword.BorderBrush = new SolidColorBrush(Colors.Gray);
+                return null;
+            }
+        }
+    }
 }

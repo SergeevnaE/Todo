@@ -5,7 +5,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
-        Title="MainEmptyWindow" Height="600" Width="800">
+        Title="MainEmptyWindow" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -25,6 +26,7 @@
         
         <WrapPanel Grid.Row="2" HorizontalAlignment="Center">
             <Button
+                Name="NewTaskButton"
                 Height="Auto" 
                 Width="Auto"
                 Margin="5"

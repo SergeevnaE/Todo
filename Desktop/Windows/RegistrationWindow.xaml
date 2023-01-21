@@ -23,7 +23,7 @@
             <RowDefinition Height="48"></RowDefinition>
             <RowDefinition Height="48"></RowDefinition>
             <RowDefinition Height="55"></RowDefinition>
-            <RowDefinition Height="62"></RowDefinition>
+            <RowDefinition Height="72"></RowDefinition>
             <RowDefinition Height="62"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
@@ -67,7 +67,8 @@
             Grid.Column="1" 
             Grid.Row="2"
             HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            Orientation="Vertical">
             
             <TextBox
                 Name="TextNameUser"
@@ -76,6 +77,11 @@
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
                 BorderThickness="0, 0, 0, 1"/>
+            <TextBlock
+                Name="ErrorTextNameUser"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
 
         </WrapPanel>
 
@@ -98,7 +104,8 @@
             Grid.Column="1" 
             Grid.Row="4"
             HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            Orientation="Vertical">
             
             <TextBox
                 Name="TextEmail"
@@ -107,6 +114,12 @@
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
                 BorderThickness="0, 0, 0, 1"/>
+            
+            <TextBlock
+                Name="ErrorTextEmail"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
 
         </WrapPanel>
 
@@ -128,7 +141,8 @@
             Grid.Column="1" 
             Grid.Row="6"
             HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            Orientation="Vertical">
 
             <TextBox 
                 Name="TextPassword"
@@ -137,6 +151,12 @@
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
                 BorderThickness="0, 0, 0, 1"/>
+            
+            <TextBlock
+                Name="ErrorTextPassword"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
 
         </WrapPanel>
 
@@ -158,7 +178,8 @@
             Grid.Column="1" 
             Grid.Row="8"
             HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            Orientation="Vertical">
 
             <TextBox
                 Name="TextConfirmPassword"
@@ -167,6 +188,12 @@
                 FontSize="20"
                 Style="{StaticResource CustomFontTextBox}"
                 BorderThickness="0, 0, 0, 1"/>
+            
+            <TextBlock
+                Name="ErrorTextConfirmPassword"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
 
         </WrapPanel>
 
@@ -174,9 +201,10 @@
             Grid.Column="1" 
             Grid.Row="9" 
             HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Bottom">
 
             <Button
+                Name="RegistrationButton"
                 Height="53" 
                 Width="335"
                 Margin="5"
@@ -185,6 +213,7 @@
                 Content="Зарегистрироваться"
                 FontSize="24"
                 Foreground="White"
+                Click="RegistrationButton_OnClick"
                 Style="{StaticResource CustomFontContentButton}">
                 
                 <Button.Resources>
@@ -200,17 +229,17 @@
             Grid.Column="1" 
             Grid.Row="10" 
             HorizontalAlignment="Left" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Top">
 
             <Button
-                Name="GoToLogin"
+                Name="BackButton"
                 Height="53" 
                 Width="335"
                 Margin="5"
                 Background="#F96060"
                 BorderBrush="#F96060"
                 Content="Назад"
-                Click="GoToLogin_OnClick"
+                Click="BackButton_OnClick"
                 FontSize="24"
                 Foreground="White"
                 Style="{StaticResource CustomFontContentButton}">

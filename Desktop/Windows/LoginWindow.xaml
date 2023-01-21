@@ -161,6 +161,7 @@
                 Content="Войти"
                 FontSize="24"
                 Foreground="White"
+                Click="GoToMainWindowButton_OnClick"
                 Style="{StaticResource CustomFontContentButton}">
                 
                 <Button.Resources>
