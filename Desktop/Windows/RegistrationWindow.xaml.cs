@@ -1,6 +1,6 @@
 ﻿using System.Windows;
+using Desktop.Repository;
 using Entities.Models;
-using Entities.Repository;
 
 namespace Desktop.Windows
 {

@@ -36,7 +36,6 @@
                 Content="Создать первую задачу"
                 FontSize="24"
                 Foreground="White"
-                Click="NewTaskButton_OnClick"
                 Style="{StaticResource CustomFontContentButton}">
                 
                 <Button.Resources>
