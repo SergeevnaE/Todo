@@ -4,13 +4,13 @@
     {
         public UserModel(string name, string email, string password)
         {
-            _userName = name;
-            _userEmail = email;
-            _userPassword = password;
+            UserName = name;
+            UserEmail = email;
+            UserPassword = password;
         }
 
-        private string _userName;
-        private string _userEmail;
-        private string _userPassword;
+        public string UserName;
+        public string UserEmail;
+        public string UserPassword;
     }
 }

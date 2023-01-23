@@ -18,12 +18,19 @@ namespace Desktop.Windows
             {
                 ErrorMessageEmail.Text = "";
                 ErrorMessagePassword.Text = "";
-                
-                UserRepository.LoginUser(new UserModel("", EnterTheEmail.Text, EnterThePassword.Text));
 
-                Window window = new MainEmptyWindow();
-                Hide();
-                window.Show();
+                var loginUser = UserRepository.LoginUser(new UserModel("", EnterTheEmail.Text, EnterThePassword.Text));
+
+                if (loginUser != null)
+                {
+                    Window window = new MainEmptyWindow();
+                    Hide();
+                    window.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Пользователя с такой почтой не существует");
+                }
             }
             else
             {

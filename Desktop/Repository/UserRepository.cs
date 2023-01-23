@@ -1,26 +1,28 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Entities.Models;
 
 namespace Desktop.Repository
 {
     public static class UserRepository
     {
-        public static List<UserModel> Users = new List<UserModel>();
-
-        public static string RegistrationUser(UserModel user)
+        private static readonly List<UserModel> Users = new List<UserModel>
         {
-            if (!Users.Contains(user))
-            {
-                Users.Add(user);
-            }
-            else
-            {
-                return "Пользователь с такой почтой уже сущетсвует";
-            }
+            new UserModel("Ruslan", "ruslan@mail.ru", "12345678"),
+            new UserModel("Kirill", "kirill@mail.ru", "87654321")
+        };
 
-            return null;
+        public static UserModel RegistrationUser(UserModel user)
+        {
+            if (Users.Any(item => item.UserEmail == user.UserEmail))
+            {
+                return null;
+            }
+            Users.Add(user);
+            return user;
         }
 
-        public static string LoginUser(UserModel user) => Users.Contains(user) ? null : "Пользователя с такой почтой не сущетсвует";
+        public static UserModel LoginUser(UserModel user) => 
+            Users.FirstOrDefault(item => item.UserEmail == user.UserEmail && item.UserPassword == user.UserPassword);
     }
 }

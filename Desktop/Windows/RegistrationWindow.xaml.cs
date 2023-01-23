@@ -29,11 +29,18 @@ namespace Desktop.Windows
                 ErrorTextPassword.Text = "";
                 ErrorTextConfirmPassword.Text = "";
                 
-                UserRepository.RegistrationUser(new UserModel(TextNameUser.Text, TextEmail.Text, TextPassword.Text));
-                
-                Window window = new MainEmptyWindow();
-                Hide();
-                window.Show();
+                var registerUser = UserRepository.RegistrationUser(new UserModel(TextNameUser.Text, TextEmail.Text, TextPassword.Text));
+
+                if (registerUser != null)
+                {
+                    Window window = new MainEmptyWindow();
+                    Hide();
+                    window.Show();   
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь с такой почтой уже зарегестрирован");
+                }
             }
             else
             {

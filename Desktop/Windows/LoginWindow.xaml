@@ -192,7 +192,6 @@
                 Click="GoToRegister_OnClick"
                 Style="{StaticResource CustomFontContentButton}">
                 
-                
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5, 5, 20, 20"></Setter>
