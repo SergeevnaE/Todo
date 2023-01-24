@@ -7,9 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <ToolBar Height="25" VerticalAlignment="Top">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Menu VerticalAlignment="Top" >
             <TextBlock 
-                Text="Дом" 
+                Text="Дом"
                 Foreground="#4BEF12" 
                 FontSize="20" 
                 Style="{StaticResource CustomFontTextBlock}"/>
@@ -28,6 +34,6 @@
                 Foreground="#AF0AFC" 
                 FontSize="20" 
                 Style="{StaticResource CustomFontTextBlock}"/>
-        </ToolBar>
+        </Menu>
     </Grid>
 </Window>
