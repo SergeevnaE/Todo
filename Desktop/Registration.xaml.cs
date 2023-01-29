@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Desktop.Repository;
+using Entities.Models;
 
 namespace Desktop
 {
@@ -39,16 +41,24 @@ namespace Desktop
             var replayPass = Validator.ComparisonPass(PasswordBox.Text, ReplayPasswordBox.Text);
             if (validName == null)
             {
-                if (validMail == true)
+                if (validMail == null)
                 {
                     if (validPass == null)
                     {
                         if (replayPass == null)
                         {
-                            var wind = new MainEmpty();
-                            wind.Show();
-                            Manager.InputSystem.Close();
-                            Manager.CurrentWindow.Close();
+                            var loginUser = UserRepository.RegistrationUser(new UserModel(NameBox.Text, MailBox.Text, PasswordBox.Text));
+                            if (loginUser != null)
+                            {
+                                var wind = new MainEmpty();
+                                wind.Show();
+                                Manager.InputSystem.Close();
+                                Manager.CurrentWindow.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Такой пользователь уже зарегистрирован!");
+                            }
                         }
                         else
                         {
@@ -62,7 +72,7 @@ namespace Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Неверная форма ввода почты");
+                    MessageBox.Show(validMail);
                 }
             }
             else

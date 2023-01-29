@@ -43,15 +43,22 @@ namespace Desktop
             }
         }
 
-        public static bool MailValid(string mail)
+        public static string MailValid(string mail)
         {
             try
             {
-                return Regex.IsMatch(mail, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                if (Regex.IsMatch(mail, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+                {
+                    return null;
+                }
+                else
+                {
+                    return "Неверная форма ввода почты";
+                }
             }
             catch
             {
-                return false;
+                return "Неверная форма ввода почты";
             }
         }
     }

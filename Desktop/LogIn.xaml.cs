@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Desktop.Repository;
+using Entities.Models;
 
 namespace Desktop
 {
@@ -37,13 +39,21 @@ namespace Desktop
         {
             var validPass = Validator.PassValid(PasswordBox.Text);
             var validMail = Validator.MailValid(MailBox.Text);
-            if (validMail == true)
+            if (validMail == null)
             {
                 if (validPass == null)
                 {
-                    var wind = new MainEmpty();
-                    wind.Show();
-                    Manager.CurrentWindow.Close();
+                    var loginUser = UserRepository.LoginUser(new UserModel("", MailBox.Text, PasswordBox.Text));
+                    if (loginUser != null)
+                    {
+                        var wind = new MainEmpty();
+                        wind.Show();
+                        Manager.CurrentWindow.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Пользователь не зарегестрирован!");
+                    }
                 }
                 else
                 {
@@ -52,7 +62,7 @@ namespace Desktop
             }
             else
             {
-                MessageBox.Show("Неверная форма ввода почты");
+                MessageBox.Show(validMail);
             }
         }
     }
