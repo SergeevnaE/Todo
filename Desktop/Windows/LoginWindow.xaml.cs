@@ -23,7 +23,7 @@ namespace Desktop.Windows
 
                 if (loginUser != null)
                 {
-                    Window window = new MainEmptyWindow();
+                    Window window = new MainEmptyWindow(loginUser.UserName);
                     Hide();
                     window.Show();
                 }

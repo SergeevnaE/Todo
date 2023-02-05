@@ -4,7 +4,6 @@ F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Desktop.pdb
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.AssemblyReference.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.SuggestedBindingRedirects.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\App.g.cs
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_Content.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_MarkupCompile.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_MarkupCompile.lref
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.g.resources
@@ -23,3 +22,7 @@ F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\RegistrationWindow.baml
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.CopyComplete
 F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Entities.dll
 F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Entities.pdb
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\CreateTaskWindow.g.cs
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\MainWindow.g.cs
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\CreateTaskWindow.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Windows\MainWindow.baml

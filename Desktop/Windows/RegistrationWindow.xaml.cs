@@ -33,7 +33,7 @@ namespace Desktop.Windows
 
                 if (registerUser != null)
                 {
-                    Window window = new MainEmptyWindow();
+                    Window window = new MainEmptyWindow(TextNameUser.Text);
                     Hide();
                     window.Show();   
                 }

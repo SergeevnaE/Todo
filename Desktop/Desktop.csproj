@@ -58,7 +58,13 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Models\TaskCategoryModel.cs" />
+        <Compile Include="Models\TaskModel.cs" />
+        <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Repository\UserRepository.cs" />
+        <Compile Include="Windows\CreateTaskWindow.xaml.cs">
+          <DependentUpon>CreateTaskWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Windows\LoginWindow.xaml.cs">
           <DependentUpon>LoginWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
@@ -72,6 +78,7 @@
         <Compile Include="Windows\RegistrationWindow.xaml.cs">
           <DependentUpon>RegistrationWindow.xaml</DependentUpon>
         </Compile>
+        <Page Include="Windows\CreateTaskWindow.xaml" />
         <Page Include="Windows\LoginWindow.xaml">
           <Generator>MSBuild:Compile</Generator>
           <SubType>Designer</SubType>
@@ -98,7 +105,7 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="fonts\actor.ttf" />
+      <Resource Include="fonts\actor.ttf" />
       <Resource Include="images\photo_profile.png" />
       <Resource Include="images\logo.png" />
     </ItemGroup>

@@ -3,37 +3,267 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:Desktop.Windows"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="600" Width="800">
+    
+    <Window.Resources>
+        <DataTemplate x:Key="TasksCategoryListTemplate">
+            <StackPanel>
+                <TextBlock 
+                    Text="{Binding Path=Title}"
+                    Foreground="{Binding Path=TitleColor}"
+                    Margin="8 0 8 0"
+                    FontSize="16"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="TasksListTemplate">
+            <StackPanel
+                CanHorizontallyScroll="True"
+                Orientation="Horizontal"
+                Margin="5 0 0 5"
+                Background="{Binding Path=BackgroundColor}">
+                
+                <StackPanel.Effect>
+                    <DropShadowEffect
+                        ShadowDepth="2"
+                        Direction="260"
+                        Color="#9B9B9B"
+                        Opacity="0.2"
+                        BlurRadius="10"/>
+                </StackPanel.Effect>
+            
+                <CheckBox
+                    Name="isCheckedTask"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="15 0 15 0"
+                    IsChecked="{Binding Path=IsChecked}" 
+                    BorderThickness="3" 
+                    BorderBrush="{Binding Path=ColorBorder}"
+                    >
+                    
+                    <CheckBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock 
+                        x:Name="taskTitle" 
+                        FontSize="18" 
+                        Style="{StaticResource CustomFontTextBlock}" 
+                        Text="{Binding Title}"/>
+                    <TextBlock 
+                        FontSize="18" 
+                        Style="{StaticResource CustomFontTextBlock}" 
+                        Foreground="#9B9B9B" 
+                        Text="{Binding Time}"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=IsChecked}" Value="true">
+                    <Setter TargetName="isCheckedTask" Property="Background" Value="Red"/>
+                    <Setter TargetName="isCheckedTask" Property="BorderBrush" Value="Red"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+            
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
+            
+        <WrapPanel 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Orientation="Vertical" 
+            HorizontalAlignment="Center">
+            
+            <Image 
+                Height="75" 
+                Width="75" 
+                Margin="10, 10, 0, 0" 
+                Source="/images/photo_profile.png"/>
+        </WrapPanel>
+         
+        <WrapPanel 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            HorizontalAlignment="Center">
+            
+            <TextBlock 
+                Name="UserNameTextBlock"
+                HorizontalAlignment="Center"
+                Style="{StaticResource CustomFontTextBlock}"
+                FontSize="20"
+                Margin="10, 20, 0, 0">
+            </TextBlock>
+        </WrapPanel>
         
-        <Menu VerticalAlignment="Top" >
-            <TextBlock 
-                Text="Дом"
-                Foreground="#4BEF12" 
-                FontSize="20" 
-                Style="{StaticResource CustomFontTextBlock}"/>
-            <TextBlock 
-                Text="Работа" 
-                Foreground="#EF6212" 
-                FontSize="20" 
-                Style="{StaticResource CustomFontTextBlock}"/>
-            <TextBlock 
-                Text="Учеба" 
-                Foreground="#125DEF" 
-                FontSize="20" 
-                Style="{StaticResource CustomFontTextBlock}"/>
-            <TextBlock 
-                Text="Отдых" 
-                Foreground="#AF0AFC" 
-                FontSize="20" 
-                Style="{StaticResource CustomFontTextBlock}"/>
-        </Menu>
+        <WrapPanel 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            VerticalAlignment="Bottom" 
+            Margin="20, 0, 0, 0">
+            
+            <ListBox 
+                x:Name="TaskCategoryListBox"
+                HorizontalContentAlignment="Stretch"
+                BorderThickness="0"
+                ItemTemplate="{StaticResource TasksCategoryListTemplate}"
+                SelectionChanged="TaskListBox_OnSelectionChanged"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                
+            </ListBox>
+        </WrapPanel>
+        
+        <StackPanel
+            Grid.Column="1"
+            Grid.Row="2"
+            Margin="10 0 0 0"
+            HorizontalAlignment="Stretch">
+            
+            <ListBox
+                x:Name="TasksListBox"
+                BorderThickness="0"
+                HorizontalContentAlignment="Stretch"
+                SelectionChanged="TasksListBox_OnSelectionChanged"
+                ItemTemplate="{StaticResource TasksListTemplate}">
+                
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </StackPanel>
+        
+        <Border
+            Name="DetailDescriptionBlock"
+            Grid.Column="2" 
+            Grid.Row="2"
+            Visibility="Hidden"
+            BorderBrush="Black" 
+            BorderThickness="1"
+            Margin="20 0 20 20">
+            
+            <StackPanel
+                Margin="5">
+            
+                <TextBlock
+                    Name="TitleTextBlock"
+                    Text="Заголовок" 
+                    HorizontalAlignment="Center" 
+                    FontSize="24" 
+                    Style="{StaticResource CustomFontTextBlock}"/>
+                
+                <TextBlock
+                    Name="TimeTextBlock"
+                    Text="18:00"
+                    FontSize="18"
+                    Margin="0 20 0 0"
+                    Style="{StaticResource CustomFontTextBlock}"/>
+                <TextBlock
+                    Name="DateTextBlock"
+                    Text="5 февраля 2023"
+                    FontSize="18"
+                    Style="{StaticResource CustomFontTextBlock}"/>
+                
+                <TextBlock
+                    Name="ContentTextBlock"
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing."
+                    TextWrapping="Wrap"
+                    FontSize="18"
+                    Margin="0 20 0 0"
+                    Style="{StaticResource CustomFontTextBlock}"/>
+                
+                <Button
+                    Name="DoneButton"
+                    Height="50"
+                    HorizontalAlignment="Stretch"
+                    Margin="30 60 30 0"
+                    Background="{DynamicResource CustomPink}"
+                    BorderBrush="{DynamicResource CustomPink}"
+                    Content="Готово"
+                    FontSize="24"
+                    Foreground="White"
+                    Style="{StaticResource CustomFontContentButton}"
+                    Click="DoneButton_OnClick">
+                    
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20, 20, 5, 5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button
+                    Name="DeleteButton"
+                    Height="50"
+                    HorizontalAlignment="Stretch"
+                    Margin="30 10 30 0"
+                    Background="{DynamicResource CustomPink}"
+                    BorderBrush="{DynamicResource CustomPink}"
+                    Content="Удалить"
+                    FontSize="24"
+                    Foreground="White"
+                    Style="{StaticResource CustomFontContentButton}"
+                    Click="DeleteButton_OnClick">
+                    
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5, 5, 20, 20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </Border>
+        
+        <WrapPanel
+            Grid.Column="0"
+            Grid.Row="3"
+            Grid.ColumnSpan="3">
+            <Button 
+                Name="AddTaskButton"
+                Height="70" 
+                Width="70" 
+                Margin="10 0 0 10"
+                Click="AddTaskButton_OnClick">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="40"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                        <GradientStop Color="#F96060" Offset="0"></GradientStop>
+                        <GradientStop Color="#F68888" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock
+                    Margin="0 0 0 8" 
+                    FontSize="40" 
+                    Foreground="White" 
+                    Text="+"/>
+            </Button>
+        </WrapPanel>
     </Grid>
 </Window>
