@@ -19,9 +19,20 @@ namespace Desktop
     /// </summary>
     public partial class MainEmpty : Window
     {
-        public MainEmpty()
+        private string userName;
+        public MainEmpty(string name)
         {
             InitializeComponent();
+
+            userName = name;
+            UserName.Text = userName;
+        }
+
+        private void Creature_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Main(userName);
+            window.Show();
+            Hide();
         }
     }
 }

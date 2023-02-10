@@ -39,3 +39,5 @@ C:\Users\Елизавета\Desktop\Учёба\Прикладное програ
 C:\Users\Елизавета\Desktop\Учёба\Прикладное программирование\WPF\Todo\Desktop\obj\Debug\Desktop.csproj.CopyComplete
 C:\Users\Елизавета\Desktop\Учёба\Прикладное программирование\WPF\Todo\Desktop\obj\Debug\Desktop.exe
 C:\Users\Елизавета\Desktop\Учёба\Прикладное программирование\WPF\Todo\Desktop\obj\Debug\Desktop.pdb
+C:\Users\Елизавета\Desktop\Учёба\Прикладное программирование\WPF\Todo\Desktop\obj\Debug\Main.g.cs
+C:\Users\Елизавета\Desktop\Учёба\Прикладное программирование\WPF\Todo\Desktop\obj\Debug\Main.baml

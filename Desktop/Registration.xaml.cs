@@ -15,10 +15,7 @@ using Desktop.Repository;
 using Entities.Models;
 
 namespace Desktop
-{
-    /// <summary>
-    /// Логика взаимодействия для Registration.xaml
-    /// </summary>
+{ 
     public partial class Registration : Window
     {
         public Registration()
@@ -30,7 +27,7 @@ namespace Desktop
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             Manager.CurrentWindow.Show();
-            this.Close();
+            Close();
         }
 
         private void InAccount_Click(object sender, RoutedEventArgs e)
@@ -50,7 +47,7 @@ namespace Desktop
                             var loginUser = UserRepository.RegistrationUser(new UserModel(NameBox.Text, MailBox.Text, PasswordBox.Text));
                             if (loginUser != null)
                             {
-                                var wind = new MainEmpty();
+                                var wind = new MainEmpty(NameBox.Text);
                                 wind.Show();
                                 Manager.InputSystem.Close();
                                 Manager.CurrentWindow.Close();

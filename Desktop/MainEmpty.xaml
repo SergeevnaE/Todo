@@ -7,18 +7,32 @@
         mc:Ignorable="d"
         Title="MainEmpty" Height="600" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <WrapPanel>
+        <WrapPanel
+            Grid.Row="0">
             <Image 
                 Height="75"
                 Width="75"
                 Margin="10, 10, 0, 0"
                 Source="Images/profile.png"/>
+        </WrapPanel>
+        
+        <WrapPanel
+            Grid.Row="1"
+            Margin="20 10 0 0">
+            <TextBlock
+                Name="UserName"
+                FontSize="16"/>
         </WrapPanel>
 
         <WrapPanel 
@@ -26,8 +40,8 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Margin="1, 0, 0, 0"
-            Grid.Row = "0"
-            Grid.RowSpan="2"
+            Grid.Row = "1"
+            Grid.Column="1"
             Width="428">
             <TextBlock 
                 FontSize="32"
@@ -41,8 +55,8 @@
         </WrapPanel>
 
         <WrapPanel
-            Grid.Row="1"
-            Grid.RowSpan="2"
+            Grid.Row="2"
+            Grid.Column="1"
             VerticalAlignment="Center"
             HorizontalAlignment="Center">
             <Button
@@ -54,7 +68,8 @@
                 FontSize="18"
                 FontFamily="Fonts/Actor-Regular.ttf"
                 Content="Создать первую задачу"
-                BorderThickness="0">
+                BorderThickness="0"
+                Click="Creature_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
