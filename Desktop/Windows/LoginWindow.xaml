@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800"
         WindowStartupLocation="CenterScreen">
@@ -46,8 +45,7 @@
                 Margin="1,0,0,0" 
                 Text="Добро пожаловать!" 
                 FontSize="36" 
-                Foreground="#313131"
-                Style="{StaticResource CustomFontTextBlock}"/>
+                Style="{StaticResource TextBlockStyle}"/>
         </WrapPanel>
 
         <WrapPanel
@@ -58,39 +56,25 @@
             Margin="0,0,0,10">
             
             <TextBlock 
-                Margin="1,0,0,0" 
                 Text="Почта" 
-                FontSize="28" 
-                Style="{StaticResource CustomFontTextBlock}"
-                Foreground="#313131" />
+                Style="{StaticResource CustomByTextBlockStyle}"/>
         </WrapPanel>
         
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="2"
-            Orientation="Vertical"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Top">
+            Style="{StaticResource TextBoxBorderStyle}">
             
             <TextBox
                 Name="EnterTheEmail"
                 Text="ruslan@mail.ru"
-                Width="340" 
-                Height="30" 
-                FontSize="20"
-                Foreground="Black"
-                BorderThickness="0, 0, 0, 1"
-                Style="{StaticResource CustomFontTextBox}">
+                Style="{StaticResource CustomByTextBoxStyle}">
             </TextBox>
             
             <TextBlock 
                 Name="ErrorMessageEmail"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0">
-            </TextBlock>
-            
-        </WrapPanel>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
+        </StackPanel>
 
         <WrapPanel 
             Grid.Column="1"
@@ -99,72 +83,52 @@
             VerticalAlignment="Center">
             
             <TextBlock 
-                Margin="1,0,0,0" 
                 Text="Пароль"
-                FontSize="28" 
-                Foreground="#313131"
-                Style="{StaticResource CustomFontTextBlock}"/>
-            
+                Style="{StaticResource CustomByTextBlockStyle}"/>
         </WrapPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1"
             Grid.Row="4"
-            Orientation="Vertical"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top">
+            Style="{StaticResource TextBoxBorderStyle}">
 
             <TextBox 
                 Name="EnterThePassword"
                 Text="12345678"
-                Width="340" 
-                Height="30"
-                FontSize="20"
-                BorderThickness="0, 0, 0, 1"
-                Style="{StaticResource CustomFontTextBox}"/>
+                Style="{StaticResource CustomByTextBoxStyle}"/>
             
             <TextBlock 
                 Name="ErrorMessagePassword"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0">
-            </TextBlock>
-            
-        </WrapPanel>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
+        </StackPanel>
 
         <WrapPanel 
             Grid.Column="1" 
             Grid.Row="5" 
-            HorizontalAlignment="Center" 
+            HorizontalAlignment="Right" 
             VerticalAlignment="Top" 
-            Margin="50, 0, 0, 0">
+            Margin="0, 0, 60, 0">
             
             <TextBlock 
                 Margin="1,0,0,0" 
                 Text="Восстановить пароль" 
-                FontSize="24" 
-                Foreground="#313131" 
-                Style="{StaticResource CustomFontTextBlock}"/>
+                FontSize="24"
+                Style="{StaticResource TextBlockStyle}"/>
             
         </WrapPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="6"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Bottom">
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Margin="0 0 60 0">
 
             <Button
-                Height="53" 
-                Width="335"
-                Margin="5"
-                Background="{DynamicResource CustomPink}"
-                BorderBrush="{DynamicResource CustomPink}"
                 Content="Войти"
-                FontSize="24"
-                Foreground="White"
+                HorizontalAlignment="Stretch"
                 Click="GoToMainWindowButton_OnClick"
-                Style="{StaticResource CustomFontContentButton}">
+                Style="{StaticResource ButtonStyle}">
                 
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -172,34 +136,27 @@
                     </Style>
                 </Button.Resources>
             </Button>
-        </WrapPanel>
+        </StackPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="7" 
-            HorizontalAlignment="Left" 
+            HorizontalAlignment="Stretch" 
             VerticalAlignment="Top" 
-            Margin="0, 5, 0, 0">
+            Margin="0 10 60 0">
 
             <Button
-                Name="GoToRegister"
-                Height="53" 
-                Width="335"
-                Margin="5"
-                Background="{DynamicResource CustomPink}"
-                BorderBrush="{DynamicResource CustomPink}"
+                HorizontalAlignment="Stretch"
                 Content="Регистрация"
-                FontSize="24"
-                Foreground="White"
                 Click="GoToRegister_OnClick"
-                Style="{StaticResource CustomFontContentButton}">
+                Style="{StaticResource ButtonStyle}">
                 
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5, 5, 20, 20"></Setter>
+                        <Setter Property="CornerRadius" Value="5, 5, 20, 20"/>
                     </Style>
                 </Button.Resources>
             </Button>
-        </WrapPanel>
+        </StackPanel>
     </Grid>
 </Window>

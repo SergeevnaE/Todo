@@ -30,15 +30,11 @@
                 Text="Название" 
                 Margin="0, 0, 0, 10"
                 FontSize="24" 
-                Style="{StaticResource CustomFontTextBlock}"/> 
+                Style="{StaticResource TextBlockStyle}"/> 
             <TextBox
                 Name="EnterTitleTextBox"
-                HorizontalContentAlignment="Stretch"
-                Padding="16"
-                BorderBrush="White"
-                BorderThickness="2"
-                FontSize="16"
-                Style="{StaticResource CustomFontTextBox}">
+                Style="{StaticResource TextBoxCreateTaskStyle}">
+                
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"/>
@@ -47,9 +43,7 @@
             </TextBox>
             <TextBlock 
                 Name="ErrorMessageTitle"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
         </StackPanel>
         
         <StackPanel 
@@ -62,15 +56,11 @@
                 Text="Категория" 
                 Margin="0, 0, 0, 10"
                 FontSize="24" 
-                Style="{StaticResource CustomFontTextBlock}"/> 
+                Style="{StaticResource TextBlockStyle}"/> 
             <TextBox
                 Name="EnterCategoryTextBox"
-                HorizontalContentAlignment="Stretch"
-                Padding="16"
-                BorderBrush="White"
-                BorderThickness="2"
-                FontSize="16"
-                Style="{StaticResource CustomFontTextBox}">
+                Style="{StaticResource TextBoxCreateTaskStyle}">
+                
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"/>
@@ -79,9 +69,7 @@
             </TextBox>
             <TextBlock 
                 Name="ErrorMessageCategory"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
         </StackPanel>
         
         <StackPanel 
@@ -93,17 +81,13 @@
                 Text="Описание" 
                 Margin="0, 0, 0, 10"
                 FontSize="24" 
-                Style="{StaticResource CustomFontTextBlock}"/> 
+                Style="{StaticResource TextBlockStyle}"/> 
             <TextBox 
                 Name="EnterContentTextBox"
-                HorizontalContentAlignment="Stretch"
-                Padding="16"
                 VerticalScrollBarVisibility="Auto"
                 TextWrapping="Wrap"
-                BorderBrush="White"
-                BorderThickness="2"
-                FontSize="16"
-                Style="{StaticResource CustomFontTextBox}">
+                Style="{StaticResource TextBoxCreateTaskStyle}">
+                
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"/>
@@ -112,38 +96,32 @@
             </TextBox>
             <TextBlock 
                 Name="ErrorMessageContent"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
         </StackPanel>
         
-        <WrapPanel
+        <StackPanel
             Grid.Column="0"
             Grid.Row="3"
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
-            Margin="30, 0, 20, 20" >
+            Margin="32 0 10 10">
             
             <Button
-                Name="CreateTaskButton"
-                HorizontalAlignment="Center"
-                Height="48"
-                Width="350"
+                Padding="16"
                 Background="#50AF54"
                 Content="Создать"
                 FontSize="18"
-                Foreground="White"
-                Style="{StaticResource CustomFontContentButton}"
+                Style="{StaticResource ButtonStyle}"
                 Click="CreateTaskButton_OnClick">
                 
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15"></Setter>
+                        <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Button.Resources>
                 
             </Button>
-        </WrapPanel>
+        </StackPanel>
         
         <StackPanel 
             Grid.Row="0" 
@@ -162,9 +140,7 @@
                 BorderThickness="2"/>
             <TextBlock 
                 Name="ErrorMessageDate"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
         </StackPanel>
         
         <StackPanel 
@@ -179,15 +155,10 @@
                 Text="Время" 
                 Margin="0, 0, 0, 10"
                 FontSize="24" 
-                Style="{StaticResource CustomFontTextBlock}"/> 
+                Style="{StaticResource TextBlockStyle}"/> 
             <TextBox
                 Name="EnterTimeTextBox"
-                HorizontalContentAlignment="Stretch"
-                Padding="16"
-                BorderBrush="White"
-                BorderThickness="2"
-                FontSize="16"
-                Style="{StaticResource CustomFontTextBox}">
+                Style="{StaticResource TextBoxCreateTaskStyle}">
                 <TextBox.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"/>
@@ -196,36 +167,31 @@
             </TextBox>
             <TextBlock 
                 Name="ErrorMessageTime"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
         </StackPanel>
         
-        <WrapPanel 
+        <StackPanel 
             Grid.Row="3" 
             Grid.Column="1" 
             VerticalAlignment="Center" 
-            HorizontalAlignment="Center"
-            Margin="30, 0, 20, 20">
+            HorizontalAlignment="Stretch"
+            Margin="10 0 32 10">
             
             <Button 
-                Name="CancelButton"
-                Height="48"
-                Width="327"
+                Padding="16"
                 Background="Red"
                 Content="Отмена"
                 FontSize="18"
-                Foreground="White"
-                Style="{StaticResource CustomFontContentButton}"
+                Style="{StaticResource ButtonStyle}"
                 Click="CancelButton_OnClick">
                 
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15"></Setter>
+                        <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Button.Resources>
                 
             </Button>
-        </WrapPanel>
+        </StackPanel>
     </Grid>
 </Window>

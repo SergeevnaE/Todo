@@ -15,29 +15,34 @@
         </Grid.RowDefinitions>
         
         <WrapPanel Grid.Row="0">
-            <Image Height="75" Width="75" Margin="10, 10, 0, 0" Source="/images/photo_profile.png"/>
+            <Image 
+                Height="75" 
+                Width="75" 
+                Margin="10, 10, 0, 0" 
+                Source="/images/photo_profile.png"/>
         </WrapPanel>
         
-        <WrapPanel Width="428" Grid.Row="1" HorizontalAlignment="Center" Orientation="Vertical">
-            <TextBlock Text="Добро пожаловать!" Style="{StaticResource CustomFontTextBlock}" FontSize="32"/>
-            <TextBlock Text="" FontSize="32"></TextBlock>
-            <TextBlock Text="Создайте свою первую задачу!" TextWrapping="Wrap" Style="{StaticResource CustomFontTextBlock}" FontSize="32"></TextBlock>
+        <WrapPanel 
+            Grid.Row="1" 
+            HorizontalAlignment="Center" 
+            Orientation="Vertical">
+            <TextBlock 
+                Text="Добро пожаловать!" 
+                Style="{StaticResource TextBlockStyle}" 
+                FontSize="32"/>
+            <TextBlock Text="" FontSize="32"/>
+            <TextBlock 
+                Text="Создайте свою первую задачу!" 
+                TextWrapping="Wrap" 
+                FontSize="32"
+                Style="{StaticResource TextBlockStyle}" />
         </WrapPanel>
         
         <WrapPanel Grid.Row="2" HorizontalAlignment="Center">
             <Button
-                Name="NewTaskButton"
-                Height="Auto" 
-                Width="Auto"
-                Margin="5"
-                Padding="10"
-                Background="#F96060"
-                BorderBrush="#F96060"
                 Content="Создать первую задачу"
-                FontSize="24"
-                Foreground="White"
                 Click="NewTaskButton_OnClick"
-                Style="{StaticResource CustomFontContentButton}">
+                Style="{StaticResource ButtonStyle}">
                 
                 <Button.Resources>
                     <Style TargetType="Border">

@@ -45,8 +45,7 @@
                 Margin="1,0,0,0" 
                 Text="Welcome back" 
                 FontSize="36" 
-                Foreground="#313131" 
-                Style="{StaticResource CustomFontTextBlock}"/>
+                Style="{StaticResource TextBlockStyle}"/>
         </WrapPanel>
 
         <WrapPanel
@@ -56,34 +55,22 @@
             VerticalAlignment="Bottom">
 
             <TextBlock 
-                Margin="1,0,0,0" 
                 Text="Имя пользователя" 
-                FontSize="24" 
-                Foreground="#313131" 
-                Style="{StaticResource CustomFontTextBlock}"/>
+                Style="{StaticResource CustomByTextBlockStyle}"/>
         </WrapPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="2"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center"
-            Orientation="Vertical">
+            Style="{StaticResource TextBoxBorderStyle}">
             
             <TextBox
                 Name="TextNameUser"
-                Width="340" 
-                Height="30" 
-                FontSize="20"
-                Style="{StaticResource CustomFontTextBox}"
-                BorderThickness="0, 0, 0, 1"/>
+                Style="{StaticResource CustomByTextBoxStyle}"/>
             <TextBlock
                 Name="ErrorTextNameUser"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
-
-        </WrapPanel>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
+        </StackPanel>
 
         <WrapPanel
             Grid.Column="1" 
@@ -92,36 +79,25 @@
             VerticalAlignment="Bottom">
 
             <TextBlock 
-                Margin="1,0,0,0" 
                 Text="Ваша почта" 
-                FontSize="24" 
-                Foreground="#313131" 
-                Style="{StaticResource CustomFontTextBlock}"/>
+                Style="{StaticResource CustomByTextBlockStyle}"/>
             
         </WrapPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="4"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center"
-            Orientation="Vertical">
+            Style="{StaticResource TextBoxBorderStyle}">
             
             <TextBox
                 Name="TextEmail"
-                Width="340" 
-                Height="30" 
-                FontSize="20"
-                Style="{StaticResource CustomFontTextBox}"
-                BorderThickness="0, 0, 0, 1"/>
+                Style="{StaticResource CustomByTextBoxStyle}"/>
             
             <TextBlock
                 Name="ErrorTextEmail"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
 
-        </WrapPanel>
+        </StackPanel>
 
         <WrapPanel
             Grid.Column="1" 
@@ -130,35 +106,24 @@
             VerticalAlignment="Bottom">
 
             <TextBlock 
-                Margin="1,0,0,0" 
                 Text="Пароль" 
-                FontSize="24" 
-                Foreground="#313131" 
-                Style="{StaticResource CustomFontTextBlock}"/>
+                Style="{StaticResource CustomByTextBlockStyle}"/>
         </WrapPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="6"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center"
-            Orientation="Vertical">
+            Style="{StaticResource TextBoxBorderStyle}">
 
             <TextBox 
                 Name="TextPassword"
-                Width="340" 
-                Height="30" 
-                FontSize="20"
-                Style="{StaticResource CustomFontTextBox}"
-                BorderThickness="0, 0, 0, 1"/>
+                Style="{StaticResource CustomByTextBoxStyle}"/>
             
             <TextBlock
                 Name="ErrorTextPassword"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
 
-        </WrapPanel>
+        </StackPanel>
 
         <WrapPanel
             Grid.Column="1" 
@@ -167,54 +132,37 @@
             VerticalAlignment="Bottom">
 
             <TextBlock 
-                Margin="1,0,0,0" 
                 Text="Повторите пароль" 
-                FontSize="24" 
-                Foreground="#313131" 
-                Style="{StaticResource CustomFontTextBlock}"/>
+                Style="{StaticResource CustomByTextBlockStyle}"/>
         </WrapPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="8"
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center"
-            Orientation="Vertical">
+            Style="{StaticResource TextBoxBorderStyle}">
 
             <TextBox
                 Name="TextConfirmPassword"
-                Width="340" 
-                Height="30" 
-                FontSize="20"
-                Style="{StaticResource CustomFontTextBox}"
-                BorderThickness="0, 0, 0, 1"/>
+                Style="{StaticResource CustomByTextBoxStyle}"/>
             
             <TextBlock
                 Name="ErrorTextConfirmPassword"
-                Text=""
-                Foreground="Red"
-                Margin="1, 1, 0, 0"/>
+                Style="{StaticResource ErrorStyleTextBlock}"/>
 
-        </WrapPanel>
+        </StackPanel>
 
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="1" 
             Grid.Row="9" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Bottom">
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Bottom"
+            Margin="0 10 60 0">
 
             <Button
-                Name="RegistrationButton"
-                Height="53" 
-                Width="335"
-                Margin="5"
-                Background="#F96060"
-                BorderBrush="#F96060"
+                Height="53"
                 Content="Зарегистрироваться"
-                FontSize="24"
-                Foreground="White"
                 Click="RegistrationButton_OnClick"
-                Style="{StaticResource CustomFontContentButton}">
+                Style="{StaticResource ButtonStyle}">
                 
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -223,26 +171,20 @@
                 </Button.Resources>
             </Button>
 
-        </WrapPanel>
+        </StackPanel>
 
-        <WrapPanel
+        <StackPanel
             Grid.Column="1" 
             Grid.Row="10" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Top">
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Top"
+            Margin="0 10 60 0">
 
             <Button
-                Name="BackButton"
                 Height="53" 
-                Width="335"
-                Margin="5"
-                Background="#F96060"
-                BorderBrush="#F96060"
                 Content="Назад"
                 Click="BackButton_OnClick"
-                FontSize="24"
-                Foreground="White"
-                Style="{StaticResource CustomFontContentButton}">
+                Style="{StaticResource ButtonStyle}">
                 
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -251,6 +193,6 @@
                 </Button.Resources>
             </Button>
 
-        </WrapPanel>
+        </StackPanel>
     </Grid>
 </Window>
