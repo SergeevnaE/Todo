@@ -14,36 +14,45 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="0" 
-            Grid.Row="0" 
+            Grid.Row="0"
             Orientation="Vertical" 
-            Margin="40, 43, 0, 0">
+            Margin="40, 45, 0, 0">
             
             <TextBlock 
                 Text="Название" 
                 Margin="0, 0, 0, 10"
                 FontSize="24" 
                 Style="{StaticResource CustomFontTextBlock}"/> 
-            <TextBox 
-                Height="61"
-                Width="342"
-                BorderBrush="#F5F5F5">
+            <TextBox
+                Name="EnterTitleTextBox"
+                HorizontalContentAlignment="Stretch"
+                Padding="16"
+                BorderBrush="White"
+                BorderThickness="2"
+                FontSize="16"
+                Style="{StaticResource CustomFontTextBox}">
                 <TextBox.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15"></Setter>
+                        <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-        </WrapPanel>
+            <TextBlock 
+                Name="ErrorMessageTitle"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
+        </StackPanel>
         
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="0" 
             Grid.Row="1" 
             Orientation="Vertical" 
@@ -54,19 +63,28 @@
                 Margin="0, 0, 0, 10"
                 FontSize="24" 
                 Style="{StaticResource CustomFontTextBlock}"/> 
-            <TextBox 
-                Height="61"
-                Width="342"
-                BorderBrush="#F5F5F5">
+            <TextBox
+                Name="EnterCategoryTextBox"
+                HorizontalContentAlignment="Stretch"
+                Padding="16"
+                BorderBrush="White"
+                BorderThickness="2"
+                FontSize="16"
+                Style="{StaticResource CustomFontTextBox}">
                 <TextBox.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15"></Setter>
+                        <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-        </WrapPanel>
+            <TextBlock 
+                Name="ErrorMessageCategory"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
+        </StackPanel>
         
-        <WrapPanel 
+        <StackPanel 
             Grid.Column="0" 
             Grid.Row="2" 
             Orientation="Vertical" 
@@ -77,32 +95,46 @@
                 FontSize="24" 
                 Style="{StaticResource CustomFontTextBlock}"/> 
             <TextBox 
-                Height="104"
-                Width="342"
-                BorderBrush="#F5F5F5">
+                Name="EnterContentTextBox"
+                HorizontalContentAlignment="Stretch"
+                Padding="16"
+                VerticalScrollBarVisibility="Auto"
+                TextWrapping="Wrap"
+                BorderBrush="White"
+                BorderThickness="2"
+                FontSize="16"
+                Style="{StaticResource CustomFontTextBox}">
                 <TextBox.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15"></Setter>
+                        <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-        </WrapPanel>
+            <TextBlock 
+                Name="ErrorMessageContent"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
+        </StackPanel>
         
         <WrapPanel
             Grid.Column="0"
             Grid.Row="3"
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Margin="0, 0, 20, 0" >
+            Margin="30, 0, 20, 20" >
             
-            <Button 
+            <Button
+                Name="CreateTaskButton"
+                HorizontalAlignment="Center"
                 Height="48"
-                Width="327"
+                Width="350"
                 Background="#50AF54"
                 Content="Создать"
                 FontSize="18"
                 Foreground="White"
-                Style="{StaticResource CustomFontContentButton}">
+                Style="{StaticResource CustomFontContentButton}"
+                Click="CreateTaskButton_OnClick">
                 
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -113,43 +145,79 @@
             </Button>
         </WrapPanel>
         
-        <WrapPanel 
+        <StackPanel 
             Grid.Row="0" 
             Grid.Column="1" 
             Grid.RowSpan="2" 
-            VerticalAlignment="Center" 
-            HorizontalAlignment="Center"
-            Margin="0, 43, 0, 0">
+            Orientation="Vertical"
+            VerticalAlignment="Center"
+            Margin="16 46 16 16">
             
             <DatePicker
-                Height="206" Width="300">
-                
-            </DatePicker>
-        </WrapPanel>
+                Name="EnterDate"
+                Text=""
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Stretch"
+                BorderBrush="White"
+                BorderThickness="2"/>
+            <TextBlock 
+                Name="ErrorMessageDate"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
+        </StackPanel>
         
-        <WrapPanel 
-            Grid.Row="2" 
-            Grid.Column="1" 
-            VerticalAlignment="Center" 
-            HorizontalAlignment="Center"
-            Margin="0, 43, 0, 0">
+        <StackPanel 
+            Grid.Row="1" 
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Margin="16 0 16 0"
+            Orientation="Vertical"
+            VerticalAlignment="Center" >
             
-        </WrapPanel>
+            <TextBlock 
+                Text="Время" 
+                Margin="0, 0, 0, 10"
+                FontSize="24" 
+                Style="{StaticResource CustomFontTextBlock}"/> 
+            <TextBox
+                Name="EnterTimeTextBox"
+                HorizontalContentAlignment="Stretch"
+                Padding="16"
+                BorderBrush="White"
+                BorderThickness="2"
+                FontSize="16"
+                Style="{StaticResource CustomFontTextBox}">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <TextBlock 
+                Name="ErrorMessageTime"
+                Text=""
+                Foreground="Red"
+                Margin="1, 1, 0, 0"/>
+        </StackPanel>
         
         <WrapPanel 
             Grid.Row="3" 
             Grid.Column="1" 
             VerticalAlignment="Center" 
-            HorizontalAlignment="Center">
+            HorizontalAlignment="Center"
+            Margin="30, 0, 20, 20">
             
             <Button 
+                Name="CancelButton"
                 Height="48"
                 Width="327"
                 Background="Red"
                 Content="Отмена"
                 FontSize="18"
                 Foreground="White"
-                Style="{StaticResource CustomFontContentButton}">
+                Style="{StaticResource CustomFontContentButton}"
+                Click="CancelButton_OnClick">
                 
                 <Button.Resources>
                     <Style TargetType="Border">

@@ -5,7 +5,7 @@ namespace Desktop.Windows
     public partial class MainEmptyWindow
     {
         private string userName;
-        public MainEmptyWindow(string name)
+        public MainEmptyWindow(string name = "")
         {
             InitializeComponent();
             userName = name;
@@ -13,7 +13,7 @@ namespace Desktop.Windows
 
         private void NewTaskButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Window window = new MainWindow(userName);
+            Window window = new CreateTaskWindow(userName);
             window.Show();
             Hide();
         }

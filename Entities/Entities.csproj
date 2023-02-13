@@ -38,7 +38,10 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Models\TaskCategoryModel.cs" />
+        <Compile Include="Models\TaskModel.cs" />
         <Compile Include="Models\UserModel.cs" />
+        <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

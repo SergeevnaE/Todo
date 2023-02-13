@@ -52,15 +52,15 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
-        <Compile Include="ExtensionsTextBox.cs" />
+        <Compile Include="Extensions.cs" />
         <Compile Include="Manager.cs" />
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="Models\TaskCategoryModel.cs" />
-        <Compile Include="Models\TaskModel.cs" />
         <Compile Include="Properties\Annotations.cs" />
+        <Compile Include="Repository\TasksCategoryRepository.cs" />
+        <Compile Include="Repository\TasksRepository.cs" />
         <Compile Include="Repository\UserRepository.cs" />
         <Compile Include="Windows\CreateTaskWindow.xaml.cs">
           <DependentUpon>CreateTaskWindow.xaml</DependentUpon>
