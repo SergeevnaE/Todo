@@ -53,7 +53,6 @@
             <SubType>Designer</SubType>
         </ApplicationDefinition>
         <Compile Include="Extensions.cs" />
-        <Compile Include="Manager.cs" />
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
@@ -62,30 +61,30 @@
         <Compile Include="Repository\TasksCategoryRepository.cs" />
         <Compile Include="Repository\TasksRepository.cs" />
         <Compile Include="Repository\UserRepository.cs" />
-        <Compile Include="Windows\CreateTaskWindow.xaml.cs">
-          <DependentUpon>CreateTaskWindow.xaml</DependentUpon>
+        <Compile Include="View\CreateTaskPage.xaml.cs">
+          <DependentUpon>CreateTaskPage.xaml</DependentUpon>
         </Compile>
-        <Compile Include="Windows\LoginWindow.xaml.cs">
-          <DependentUpon>LoginWindow.xaml</DependentUpon>
-          <SubType>Code</SubType>
+        <Compile Include="View\LoginPage.xaml.cs">
+          <DependentUpon>LoginPage.xaml</DependentUpon>
         </Compile>
-        <Compile Include="Windows\MainEmptyWindow.xaml.cs">
-          <DependentUpon>MainEmptyWindow.xaml</DependentUpon>
+        <Compile Include="View\MainEmptyPage.xaml.cs">
+          <DependentUpon>MainEmptyPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="View\MainPage.xaml.cs">
+          <DependentUpon>MainPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="View\RegistrationPage.xaml.cs">
+          <DependentUpon>RegistrationPage.xaml</DependentUpon>
         </Compile>
         <Compile Include="Windows\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
         </Compile>
-        <Compile Include="Windows\RegistrationWindow.xaml.cs">
-          <DependentUpon>RegistrationWindow.xaml</DependentUpon>
-        </Compile>
-        <Page Include="Windows\CreateTaskWindow.xaml" />
-        <Page Include="Windows\LoginWindow.xaml">
-          <Generator>MSBuild:Compile</Generator>
-          <SubType>Designer</SubType>
-        </Page>
-        <Page Include="Windows\MainEmptyWindow.xaml" />
+        <Page Include="View\CreateTaskPage.xaml" />
+        <Page Include="View\LoginPage.xaml" />
+        <Page Include="View\MainEmptyPage.xaml" />
+        <Page Include="View\MainPage.xaml" />
+        <Page Include="View\RegistrationPage.xaml" />
         <Page Include="Windows\MainWindow.xaml" />
-        <Page Include="Windows\RegistrationWindow.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">

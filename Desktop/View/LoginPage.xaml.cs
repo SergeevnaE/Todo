@@ -1,15 +1,15 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using Desktop.Repository;
 using Entities.Models;
 
-namespace Desktop.Windows
+namespace Desktop.View
 {
-    public partial class LoginWindow
+    public partial class LoginPage : Page
     {
-        public LoginWindow()
+        public LoginPage()
         {
             InitializeComponent();
-            Manager.CurrentWindow = this;
         }
 
         private void GoToMainWindowButton_OnClick(object sender, RoutedEventArgs e)
@@ -23,9 +23,7 @@ namespace Desktop.Windows
 
                 if (loginUser != null)
                 {
-                    Window window = new MainEmptyWindow(loginUser.UserName);
-                    Hide();
-                    window.Show();
+                    NavigationService?.Navigate(new MainEmptyPage(loginUser.UserName));
                 }
                 else
                 {
@@ -42,9 +40,7 @@ namespace Desktop.Windows
 
         private void GoToRegister_OnClick(object sender, RoutedEventArgs e)
         {
-            Window window = new RegistrationWindow();
-            Hide();
-            window.Show();
+            NavigationService?.Navigate(new RegistrationPage());
         }
     }
 }

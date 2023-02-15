@@ -1,20 +1,20 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using Desktop.Repository;
+using Desktop.Windows;
 using Entities.Models;
 
-namespace Desktop.Windows
+namespace Desktop.View
 {
-    public partial class RegistrationWindow
+    public partial class RegistrationPage : Page
     {
-        public RegistrationWindow()
+        public RegistrationPage()
         {
             InitializeComponent();
         }
-
         private void BackButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Manager.CurrentWindow.Show();
-            Close();
+            NavigationService?.Navigate(new LoginPage());
         }
 
         private void RegistrationButton_OnClick(object sender, RoutedEventArgs e)
@@ -33,9 +33,7 @@ namespace Desktop.Windows
 
                 if (registerUser != null)
                 {
-                    Window window = new MainEmptyWindow(TextNameUser.Text);
-                    Hide();
-                    window.Show();   
+                    NavigationService?.Navigate(new MainEmptyPage(TextNameUser.Text));
                 }
                 else
                 {

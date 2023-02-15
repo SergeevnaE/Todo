@@ -1,33 +1,25 @@
 ﻿using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using Desktop.Repository;
 using Entities.Models;
 
-namespace Desktop.Windows
+namespace Desktop.View
 {
-    public partial class CreateTaskWindow : Window
+    public partial class CreateTaskPage : Page
     {
+        
         private string userName;
-        public CreateTaskWindow(string name = "")
+        
+        public CreateTaskPage(string name = "")
         {
             InitializeComponent();
             userName = name;
         }
-
+        
         private void CancelButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var window = new MainWindow(userName);
-
-            Hide();
-
-            if (window.TasksListBox.Items.Count == 0)
-            {
-                new MainEmptyWindow(userName).Show();
-            }
-            else
-            {
-                window.Show();
-            }
+            NavigationService?.Navigate(new MainPage(userName));
         }
 
         private void CreateTaskButton_OnClick(object sender, RoutedEventArgs e)
@@ -49,8 +41,8 @@ namespace Desktop.Windows
                 };
                 
                 TasksRepository.AddTask(task);
-                Hide();
-                new MainWindow().Show();
+
+                NavigationService?.Navigate(new MainPage(userName));
             }
             else
             {
