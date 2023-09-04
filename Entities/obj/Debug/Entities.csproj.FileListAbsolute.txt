@@ -1,6 +1,6 @@
 F:\TodoDesktopApplication\Todo\Entities\bin\Debug\Entities.dll
 F:\TodoDesktopApplication\Todo\Entities\bin\Debug\Entities.pdb
-F:\TodoDesktopApplication\Todo\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
 F:\TodoDesktopApplication\Todo\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 F:\TodoDesktopApplication\Todo\Entities\obj\Debug\Entities.dll
 F:\TodoDesktopApplication\Todo\Entities\obj\Debug\Entities.pdb
+F:\TodoDesktopApplication\Todo\Entities\obj\Debug\Entities.csprojAssemblyReference.cache

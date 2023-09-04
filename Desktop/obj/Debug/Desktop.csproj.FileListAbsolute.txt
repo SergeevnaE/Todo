@@ -1,8 +1,6 @@
 F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Desktop.exe.config
 F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Desktop.exe
 F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Desktop.pdb
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.AssemblyReference.cache
-F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.SuggestedBindingRedirects.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\App.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_MarkupCompile.cache
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop_MarkupCompile.lref
@@ -28,3 +26,5 @@ F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\View\LoginPage.baml
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\View\MainEmptyPage.baml
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\View\MainPage.baml
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\View\RegistrationPage.baml
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csprojAssemblyReference.cache
+F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\ResourceDictionary.baml

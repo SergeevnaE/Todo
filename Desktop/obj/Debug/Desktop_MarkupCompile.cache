@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\TodoDesktopApplication\Todo\Desktop\App.xaml
-6-111248074
+71586061379
 
 14-2026068603
 111672486990
-View\CreateTaskPage.xaml;View\LoginPage.xaml;View\MainEmptyPage.xaml;View\MainPage.xaml;View\RegistrationPage.xaml;Windows\MainWindow.xaml;
+ResourceDictionary.xaml;View\CreateTaskPage.xaml;View\LoginPage.xaml;View\MainEmptyPage.xaml;View\MainPage.xaml;View\RegistrationPage.xaml;Windows\MainWindow.xaml;
 
-True
+False
 
