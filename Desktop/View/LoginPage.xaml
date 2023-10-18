@@ -3,11 +3,17 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local = "clr-namespace:Desktop.View"
       mc:Ignorable="d"
       d:DesignHeight="650" d:DesignWidth="800"
       Title="LoginPage" WindowTitle="LoginPage"
       ShowsNavigationUI="False">
-    <Grid>
+    <Page.RenderTransform>
+        <TranslateTransform X="0" Y="0" />
+    </Page.RenderTransform>
+    <Grid
+        x:Name="LoginGrid">
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -36,7 +42,7 @@
                 Source="/images/logo.png" />
 
         </WrapPanel>
-
+        
         <WrapPanel 
             Grid.Column="1" Grid.Row="0" 
             HorizontalAlignment="Left"
@@ -48,7 +54,7 @@
                 FontSize="36" 
                 Style="{StaticResource TextBlockStyle}"/>
         </WrapPanel>
-
+        
         <WrapPanel
             Grid.Column="1" 
             Grid.Row="1" 
@@ -126,10 +132,18 @@
             Margin="0 0 60 0">
 
             <Button
+                Name="EnterButton"
                 Content="Войти"
+                Height="50"
                 HorizontalAlignment="Stretch"
+                MouseEnter="animatedButton_MouseEnter"
+                MouseLeave="animatedButton_MouseLeave"
                 Click="GoToMainWindowButton_OnClick"
                 Style="{StaticResource ButtonStyle}">
+                
+                <Button.RenderTransform>
+                    <ScaleTransform ScaleY="1" />
+                </Button.RenderTransform>
                 
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -147,8 +161,12 @@
             Margin="0 10 60 0">
 
             <Button
+                Name="RegisterButton"
+                Height="50"
                 HorizontalAlignment="Stretch"
                 Content="Регистрация"
+                MouseEnter="animatedButton_MouseEnter"
+                MouseLeave="animatedButton_MouseLeave"
                 Click="GoToRegister_OnClick"
                 Style="{StaticResource ButtonStyle}">
                 

@@ -19,7 +19,8 @@ namespace Desktop.View
         
         private void CancelButton_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new MainPage(userName));
+            MainPage nextPage = new MainPage(userName);
+            PageTransition.Transition(this, nextPage);
         }
 
         private void CreateTaskButton_OnClick(object sender, RoutedEventArgs e)
@@ -42,7 +43,8 @@ namespace Desktop.View
                 
                 TasksRepository.AddTask(task);
 
-                NavigationService?.Navigate(new MainPage(userName));
+                MainPage nextPage = new MainPage(userName);
+                PageTransition.Transition(this, nextPage);
             }
             else
             {

@@ -17,7 +17,8 @@ namespace Desktop.View
         
         private void NewTaskButton_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new CreateTaskPage());
+            CreateTaskPage nextPage = new CreateTaskPage(userName);
+            PageTransition.Transition(this, nextPage);
         }
     }
 }

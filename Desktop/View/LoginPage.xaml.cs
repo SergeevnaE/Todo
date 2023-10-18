@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 using Desktop.Repository;
 using Entities.Models;
 
@@ -7,6 +11,9 @@ namespace Desktop.View
 {
     public partial class LoginPage : Page
     {
+        private UserControl oldView;
+        private bool isAnimationRun;
+        
         public LoginPage()
         {
             InitializeComponent();
@@ -23,7 +30,8 @@ namespace Desktop.View
 
                 if (loginUser != null)
                 {
-                    NavigationService?.Navigate(new MainEmptyPage(loginUser.UserName));
+                    MainEmptyPage nextPage = new MainEmptyPage(loginUser.UserName);
+                    PageTransition.Transition(this, nextPage);
                 }
                 else
                 {
@@ -40,7 +48,28 @@ namespace Desktop.View
 
         private void GoToRegister_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new RegistrationPage());
+            RegistrationPage nextPage = new RegistrationPage();
+            PageTransition.Transition(this, nextPage);
+        }
+        
+        private void animatedButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            var button = sender as Button;
+            if(button != null)
+            {
+                DoubleAnimation heightAnimation = new DoubleAnimation(60, TimeSpan.FromSeconds(0.3));
+                button.BeginAnimation(Button.HeightProperty, heightAnimation);   
+            }
+        }
+
+        private void animatedButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            var button = sender as Button;
+            if(button != null)
+            {
+                DoubleAnimation heightAnimation = new DoubleAnimation(50, TimeSpan.FromSeconds(0.3));
+                button.BeginAnimation(Button.HeightProperty, heightAnimation);   
+            }
         }
     }
 }

@@ -1,6 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 using Desktop.Repository;
 using Entities.Models;
 
@@ -8,7 +11,6 @@ namespace Desktop.View
 {
     public partial class MainPage : Page
     {
-        
         private static bool isChecked;
         
         public MainPage(string name = "")
@@ -33,7 +35,16 @@ namespace Desktop.View
         {
             var task = (TaskModel) TasksListBox.SelectedItem;
 
-            DetailDescriptionBlock.Visibility = Visibility.Visible;
+            TranslateTransform transformLeft = (TranslateTransform)DetailDescriptionBlock.RenderTransform;
+
+            DoubleAnimation enterAnimationLeft = new DoubleAnimation
+            {
+                To = 0,
+                Duration = TimeSpan.FromSeconds(0.5)
+            };
+
+            DetailDescriptionBlock.BeginAnimation(UIElement.OpacityProperty, new DoubleAnimation(1, TimeSpan.FromSeconds(0.5)));
+            transformLeft.BeginAnimation(TranslateTransform.XProperty, enterAnimationLeft);
 
             if (task != null)
             {
@@ -46,13 +57,23 @@ namespace Desktop.View
             }
             else
             {
-                DetailDescriptionBlock.Visibility = Visibility.Hidden;
+                TranslateTransform transformRight = (TranslateTransform)DetailDescriptionBlock.RenderTransform;
+
+                DoubleAnimation enterAnimationRight = new DoubleAnimation
+                {
+                    To = 800,
+                    Duration = TimeSpan.FromSeconds(0.5)
+                };
+
+                DetailDescriptionBlock.BeginAnimation(UIElement.OpacityProperty, new DoubleAnimation(1, TimeSpan.FromSeconds(0.5)));
+                transformRight.BeginAnimation(TranslateTransform.XProperty, enterAnimationRight);
             }
         }
         
         private void AddTaskButton_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new CreateTaskPage());
+            CreateTaskPage nextPage = new CreateTaskPage();
+            PageTransition.Transition(this, nextPage);
         }
 
         private void DoneButton_OnClick(object sender, RoutedEventArgs e)

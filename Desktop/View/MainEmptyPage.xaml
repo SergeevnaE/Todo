@@ -6,7 +6,10 @@
       xmlns:local="clr-namespace:Desktop.View"
       mc:Ignorable="d"
       Title="MainEmptyPage" Height="650" Width="800">
-    <Grid>
+    <Page.RenderTransform>
+        <TranslateTransform X="0" Y="0" />
+    </Page.RenderTransform>
+    <Grid x:Name="MainEmptyGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>

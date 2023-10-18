@@ -57,6 +57,7 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="PageTransition.cs" />
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Repository\TasksCategoryRepository.cs" />
         <Compile Include="Repository\TasksRepository.cs" />
@@ -76,6 +77,9 @@
         <Compile Include="View\RegistrationPage.xaml.cs">
           <DependentUpon>RegistrationPage.xaml</DependentUpon>
         </Compile>
+        <Compile Include="View\TransitionPage.xaml.cs">
+          <DependentUpon>TransitionPage.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Windows\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
         </Compile>
@@ -85,6 +89,7 @@
         <Page Include="View\MainEmptyPage.xaml" />
         <Page Include="View\MainPage.xaml" />
         <Page Include="View\RegistrationPage.xaml" />
+        <Page Include="View\TransitionPage.xaml" />
         <Page Include="Windows\MainWindow.xaml" />
     </ItemGroup>
     <ItemGroup>

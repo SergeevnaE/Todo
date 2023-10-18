@@ -14,7 +14,8 @@ namespace Desktop.View
         }
         private void BackButton_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new LoginPage());
+            LoginPage nextPage = new LoginPage();
+            PageTransition.Transition(this, nextPage);
         }
 
         private void RegistrationButton_OnClick(object sender, RoutedEventArgs e)
@@ -33,7 +34,8 @@ namespace Desktop.View
 
                 if (registerUser != null)
                 {
-                    NavigationService?.Navigate(new MainEmptyPage(TextNameUser.Text));
+                    MainEmptyPage nextPage = new MainEmptyPage(TextNameUser.Text);
+                    PageTransition.Transition(this, nextPage);
                 }
                 else
                 {

@@ -14,7 +14,7 @@ namespace Desktop.Windows
         public MainWindow()
         {
             InitializeComponent();
-            MainControl.Content = new LoginPage();
+            MainContent.Content = new LoginPage();
         }
     }
 }

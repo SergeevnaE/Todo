@@ -6,7 +6,11 @@
       xmlns:local="clr-namespace:Desktop.View"
       mc:Ignorable="d"
       Title="RegistrationPage" Height="650" Width="800">
-    <Grid>
+    <Page.RenderTransform>
+        <TranslateTransform X="0" Y="0" />
+    </Page.RenderTransform>
+    <Grid x:Name="RegistrationGrid">
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
