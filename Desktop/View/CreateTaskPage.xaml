@@ -31,6 +31,7 @@
                 Style="{StaticResource TextBlockStyle}"/> 
             <TextBox
                 Name="EnterTitleTextBox"
+                Background="LightGray"
                 Style="{StaticResource TextBoxCreateTaskStyle}">
                 
                 <TextBox.Resources>
@@ -57,6 +58,7 @@
                 Style="{StaticResource TextBlockStyle}"/> 
             <TextBox
                 Name="EnterCategoryTextBox"
+                Background="LightGray"
                 Style="{StaticResource TextBoxCreateTaskStyle}">
                 
                 <TextBox.Resources>
@@ -84,6 +86,7 @@
                 Name="EnterContentTextBox"
                 VerticalScrollBarVisibility="Auto"
                 TextWrapping="Wrap"
+                Background="LightGray"
                 Style="{StaticResource TextBoxCreateTaskStyle}">
                 
                 <TextBox.Resources>
@@ -132,6 +135,7 @@
             <DatePicker
                 Name="EnterDate"
                 Text=""
+                Background="LightGray"
                 VerticalAlignment="Center"
                 Padding="16"
                 HorizontalContentAlignment="Stretch"
@@ -165,6 +169,7 @@
                 Style="{StaticResource TextBlockStyle}"/> 
             <TextBox
                 Name="EnterTimeTextBox"
+                Background="LightGray"
                 Style="{StaticResource TextBoxCreateTaskStyle}">
                 <TextBox.Resources>
                     <Style TargetType="Border">

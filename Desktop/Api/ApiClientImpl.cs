@@ -137,5 +137,14 @@ namespace Desktop.Api
 
             await _httpClient.DeleteAsync($"todos/{id}").ConfigureAwait(false);
         }
+        
+        [CanBeNull]
+        public async Task MarkTaskAsync(Guid id)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", TokenManager.Token);
+            
+            await _httpClient.PutAsync($"todos/mark/{id}", null).ConfigureAwait(false);
+        }
     }
 }

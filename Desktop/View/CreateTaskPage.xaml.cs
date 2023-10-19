@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Desktop.Api;
-using Desktop.Repository;
 using Entities.Models;
 
 namespace Desktop.View
@@ -65,8 +63,6 @@ namespace Desktop.View
 
         public long ToUnixTime(string dateTime)
         {
-            //string dateTimeString = "19.10.2023 13:18";
-            
             string[] dateTimeParts = dateTime.Split(' ');
             string dateString = dateTimeParts[0];
             string timeString = dateTimeParts[1];

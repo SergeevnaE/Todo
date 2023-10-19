@@ -44,15 +44,21 @@ namespace Desktop.View
                 Duration = TimeSpan.FromSeconds(0.5)
             };
 
-            DetailDescriptionBlock.BeginAnimation(UIElement.OpacityProperty, new DoubleAnimation(1, TimeSpan.FromSeconds(0.5)));
+            DetailDescriptionBlock.BeginAnimation(OpacityProperty, new DoubleAnimation(1, TimeSpan.FromSeconds(0.5)));
             transformLeft.BeginAnimation(TranslateTransform.XProperty, enterAnimationLeft);
 
             if (task != null)
             {
+                long unixTime = task.Date;
+                DateTime dateTime = DateTimeOffset.FromUnixTimeSeconds(unixTime).UtcDateTime;
+                
+                string dateFormatted = dateTime.ToString("dd.MM.yyyy");
+                string timeFormatted = dateTime.ToString("HH:mm");
+                
                 TitleTextBlock.Text = task.Title;
                 ContentTextBlock.Text = task.Description;
-                TimeTextBlock.Text = task.Time;
-                DateTextBlock.Text = task.Date.ToString();
+                TimeTextBlock.Text = timeFormatted;
+                DateTextBlock.Text = dateFormatted;
 
                 DoneButton.Visibility = TasksRepository.GetIsCheckedTask(task) ? Visibility.Collapsed : Visibility.Visible;
             }
@@ -66,7 +72,7 @@ namespace Desktop.View
                     Duration = TimeSpan.FromSeconds(0.5)
                 };
 
-                DetailDescriptionBlock.BeginAnimation(UIElement.OpacityProperty, new DoubleAnimation(1, TimeSpan.FromSeconds(0.5)));
+                DetailDescriptionBlock.BeginAnimation(OpacityProperty, new DoubleAnimation(1, TimeSpan.FromSeconds(0.5)));
                 transformRight.BeginAnimation(TranslateTransform.XProperty, enterAnimationRight);
             }
         }
@@ -79,8 +85,10 @@ namespace Desktop.View
 
         private void DoneButton_OnClick(object sender, RoutedEventArgs e)
         {
+            var selectedItem = TasksListBox.SelectedItem as TaskModel;
+            new ApiClientImpl()?.MarkTaskAsync(selectedItem.Id.Value);
             DoneButton.Visibility = Visibility.Collapsed;
-            TasksRepository.IsCheckedTask((TaskModel) TasksListBox.SelectedItem);
+            TasksRepository.IsCheckedTask(selectedItem);
         }
 
         private void DeleteButton_OnClick(object sender, RoutedEventArgs e)
@@ -129,6 +137,13 @@ namespace Desktop.View
                 TasksRepository.GetTaskByIsCheckedAndTaskCategory(
                     isChecked,
                     (TaskCategoryModel) TaskCategoryListBox.SelectedItem);
+        }
+
+        private void IsCheckedTask_OnClick(object sender, RoutedEventArgs e)
+        {
+            var selectedItem = (TaskModel) TasksListBox.SelectedItem;
+
+            new ApiClientImpl()?.MarkTaskAsync(selectedItem.Id.Value);
         }
     }
 }

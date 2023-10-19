@@ -18,5 +18,7 @@ namespace Desktop.Api
         public Task<TaskModel> CreateTaskAsync(TaskModel taskModel);
 
         public Task DeleteTaskAsync(Guid id);
+        
+        public Task MarkTaskAsync(Guid id);
     }
 }

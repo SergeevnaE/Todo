@@ -9,7 +9,7 @@ namespace Desktop.Repository
     public static class TasksRepository
     {
 
-        private static readonly ObservableCollection<TaskModel> Tasks;
+        private static ObservableCollection<TaskModel> Tasks;
 
         static TasksRepository()
         {
@@ -22,6 +22,7 @@ namespace Desktop.Repository
         
         public static ObservableCollection<TaskModel> GetTasks()
         {
+            Tasks = new ApiClientImpl().GetTasksAsync()?.Result;
             return Tasks;
         }
 

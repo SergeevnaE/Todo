@@ -59,6 +59,7 @@
                     Margin="15 0 15 0"
                     IsChecked="{Binding Path=IsCompleted}" 
                     BorderThickness="3"
+                    Click="IsCheckedTask_OnClick"
                     BorderBrush="{Binding Path=ColorBorder}">
                     
                     <CheckBox.Resources>
