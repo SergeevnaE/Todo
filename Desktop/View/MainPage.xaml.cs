@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using Desktop.Api;
 using Desktop.Repository;
 using Entities.Models;
 
@@ -49,9 +50,9 @@ namespace Desktop.View
             if (task != null)
             {
                 TitleTextBlock.Text = task.Title;
-                ContentTextBlock.Text = task.Content;
+                ContentTextBlock.Text = task.Description;
                 TimeTextBlock.Text = task.Time;
-                DateTextBlock.Text = task.Date;
+                DateTextBlock.Text = task.Date.ToString();
 
                 DoneButton.Visibility = TasksRepository.GetIsCheckedTask(task) ? Visibility.Collapsed : Visibility.Visible;
             }
@@ -72,7 +73,7 @@ namespace Desktop.View
         
         private void AddTaskButton_OnClick(object sender, RoutedEventArgs e)
         {
-            CreateTaskPage nextPage = new CreateTaskPage();
+            CreateTaskPage nextPage = new CreateTaskPage(new ApiClientImpl().GetUserInformation().Result.Name);
             PageTransition.Transition(this, nextPage);
         }
 
@@ -84,6 +85,10 @@ namespace Desktop.View
 
         private void DeleteButton_OnClick(object sender, RoutedEventArgs e)
         {
+            var selectedItem = (TaskModel) TasksListBox.SelectedItem;
+
+            new ApiClientImpl()?.DeleteTaskAsync(selectedItem.Id.Value);
+            
             TasksRepository.DeleteTask((TaskModel) TasksListBox.SelectedItem);
             TasksListBox.ItemsSource = TasksRepository.GetTaskByIsCheckedAndTaskCategory(isChecked, (TaskCategoryModel) TaskCategoryListBox.SelectedItem);
 

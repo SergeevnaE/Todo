@@ -44,7 +44,7 @@ namespace Desktop.Repository
             {
                 foreach (var item in tasks)
                 {
-                    if (item.IsChecked)
+                    if (item.IsCompleted)
                     {
                         _tasksCategory.Add(item);
                     }
@@ -60,7 +60,7 @@ namespace Desktop.Repository
             {
                 foreach (var item in tasks)
                 {
-                    if (!item.IsChecked)
+                    if (!item.IsCompleted)
                     {
                         _tasksCategory.Add(item);
                     }

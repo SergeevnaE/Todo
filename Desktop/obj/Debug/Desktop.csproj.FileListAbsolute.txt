@@ -31,3 +31,5 @@ F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\Desktop.csproj.AssemblyReferenc
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\View\TransitionPage.g.cs
 F:\TodoDesktopApplication\Todo\Desktop\obj\Debug\View\TransitionPage.baml
+F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Newtonsoft.Json.dll
+F:\TodoDesktopApplication\Todo\Desktop\bin\Debug\Newtonsoft.Json.xml

@@ -1,45 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Desktop.Api;
 using Entities.Models;
 
 namespace Desktop.Repository
 {
     public static class TasksRepository
     {
-        private static readonly ObservableCollection<TaskModel> Tasks = new ObservableCollection<TaskModel>
-        {
-            new TaskModel {Id = 0, Title = "Сходить на рыбалку со Стефаном", 
-                Category = "Отдых", Content = "Сегодня нужно позвать Стефана на рыбалку", 
-                Date = "08.02.2023", Time = "12:00", IsChecked = false},
-            
-            new TaskModel {Id = 1, Title = "Прочитать книгу Рассказы Чехова", 
-                Category = "Учеба", Content = "На уроке задали прочитать 3 рассказа Чехова", 
-                Date = "06.02.2023", Time = "16:00", IsChecked = true},
-            
-            new TaskModel {Id = 2, Title = "Убраться по дому", 
-                Category = "Дом", Content = "Мама сказала убраться по дому до ее прихода", 
-                Date = "07.02.2023", Time = "11:00", IsChecked = false},
-            
-            new TaskModel {Id = 3, Title = "Выполнить то, что не успел сделать на работе", 
-                Category = "Работа", Content = "Сегодня я не успел сделать все отчеты по прошедшему месяцу", 
-                Date = "09.02.2023", Time = "18:00", IsChecked = false},
-            
-            new TaskModel {Id = 4, Title = "Android", 
-                Category = "Программирование", Content = "Нужно реализовать кастомную нижнюю навигацию", 
-                Date = "05.02.2023", Time = "14:00", IsChecked = true},
-            
-            new TaskModel {Id = 5, Title = "WPF", 
-                Category = "Программирование", Content = "Нужно реализовать добавление задачи", 
-                Date = "08.02.2023", Time = "12:00", IsChecked = false},
-            
-            new TaskModel {Id = 6, Title = "Сходить поиграть в футбол с пацанами", 
-                Category = "Отдых", Content = "Завтра меня Стефан позвал поиграть футбол, нужно сходить", 
-                Date = "09.02.2023", Time = "10:00", IsChecked = true},
-        };
 
+        private static readonly ObservableCollection<TaskModel> Tasks;
+
+        static TasksRepository()
+        {
+            Tasks = new ApiClientImpl().GetTasksAsync()?.Result;
+        }
         public static bool GetIsCheckedTask(TaskModel task)
         {
-            return task.IsChecked;
+            return task.IsCompleted;
         }
         
         public static ObservableCollection<TaskModel> GetTasks()
@@ -60,7 +38,7 @@ namespace Desktop.Repository
             {
                 foreach (var task in Tasks)
                 {
-                    if (task.IsChecked && taskCategory.Title == task.Category)
+                    if (task.IsCompleted && taskCategory.Title == task.Category)
                     {
                         tasks.Add(task);
                     }
@@ -70,7 +48,7 @@ namespace Desktop.Repository
             {
                 foreach (var task in Tasks)
                 {
-                    if (!task.IsChecked && taskCategory.Title == task.Category)
+                    if (!task.IsCompleted && taskCategory.Title == task.Category)
                     {
                         tasks.Add(task);
                     }
@@ -100,7 +78,7 @@ namespace Desktop.Repository
 
         public static void IsCheckedTask(TaskModel task)
         {
-            task.IsChecked = true;
+            task.IsCompleted = true;
         }
     }
 }

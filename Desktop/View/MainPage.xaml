@@ -57,7 +57,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Margin="15 0 15 0"
-                    IsChecked="{Binding Path=IsChecked}" 
+                    IsChecked="{Binding Path=IsCompleted}" 
                     BorderThickness="3"
                     BorderBrush="{Binding Path=ColorBorder}">
                     
@@ -85,7 +85,7 @@
             </StackPanel>
             
             <DataTemplate.Triggers>
-                <DataTrigger Binding="{Binding Path=IsChecked}" Value="True">
+                <DataTrigger Binding="{Binding Path=IsCompleted}" Value="True">
                     <Setter TargetName="isCheckedTask" Property="Background" Value="Red"/>
                     <Setter TargetName="isCheckedTask" Property="BorderBrush" Value="Red"/>
                     <Setter TargetName="taskTitle" Property="TextDecorations" Value="Strikethrough"/>
@@ -94,7 +94,7 @@
                     <Setter TargetName="taskTime" Property="Foreground" Value="Gray"/>
                     <Setter TargetName="tasksBlock" Property="Background" Value="#E7FFED"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding Path=IsChecked}" Value="False">
+                <DataTrigger Binding="{Binding Path=IsCompleted}" Value="False">
                     <Setter TargetName="isCheckedTask" Property="Background" Value="White"/>
                     <Setter TargetName="isCheckedTask" Property="BorderBrush" Value="Blue"/>
                     <Setter TargetName="taskTitle" Property="TextDecorations" Value=""/>

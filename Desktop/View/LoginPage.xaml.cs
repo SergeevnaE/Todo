@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using Desktop.Api;
 using Desktop.Repository;
 using Entities.Models;
 
@@ -25,17 +26,20 @@ namespace Desktop.View
             {
                 ErrorMessageEmail.Text = "";
                 ErrorMessagePassword.Text = "";
+                
+                var loginUserRemote = new ApiClientImpl().LoginUserAsync(new UserModel
+                    { Email = EnterTheEmail.Text, Password = EnterThePassword.Text });
 
-                var loginUser = UserRepository.LoginUser(new UserModel("", EnterTheEmail.Text, EnterThePassword.Text));
-
-                if (loginUser != null)
+                if (loginUserRemote?.Result != null)
                 {
-                    MainEmptyPage nextPage = new MainEmptyPage(loginUser.UserName);
+                    TokenManager.Token = loginUserRemote.Result?.access_token;
+                    MainEmptyPage nextPage = new MainEmptyPage(new ApiClientImpl().GetUserInformation().Result.Name);
                     PageTransition.Transition(this, nextPage);
                 }
                 else
                 {
-                    MessageBox.Show("Пользователя с такой почтой не существует");
+                    MessageBox.Show("Неверны почта или пароль!", "Ошибка", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
             else

@@ -38,9 +38,13 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Models\DataModel.cs" />
         <Compile Include="Models\TaskCategoryModel.cs" />
+        <Compile Include="Models\TaskListResponse.cs" />
         <Compile Include="Models\TaskModel.cs" />
+        <Compile Include="Models\TokenModel.cs" />
         <Compile Include="Models\UserModel.cs" />
+        <Compile Include="Models\UserModelResponse.cs" />
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

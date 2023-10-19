@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Entities.Annotations;
 
@@ -6,19 +7,19 @@ namespace Entities.Models
 {
     public class TaskModel : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Category { get; set; }
-        public string Content { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
+        public Guid? Id { get; set; }
+        [CanBeNull] public string Title { get; set; }
+        [CanBeNull] public string Category { get; set; }
+        [CanBeNull] public string Description { get; set; }
+        [CanBeNull] public long Date { get; set; }
+        [CanBeNull] public string Time { get; set; }
         
-        private bool _isChecked;
-        public bool IsChecked {            
-            get => _isChecked;
+        private bool _isCompleted;
+        public bool IsCompleted {            
+            get => _isCompleted;
             set
             {
-                _isChecked = value;
+                _isCompleted = value;
                 OnPropertyChanged();
             } 
         }

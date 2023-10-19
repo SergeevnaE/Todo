@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using Desktop.Api;
 using Desktop.Repository;
 using Desktop.Windows;
 using Entities.Models;
@@ -29,17 +30,20 @@ namespace Desktop.View
                 ErrorTextEmail.Text = "";
                 ErrorTextPassword.Text = "";
                 ErrorTextConfirmPassword.Text = "";
-                
-                var registerUser = UserRepository.RegistrationUser(new UserModel(TextNameUser.Text, TextEmail.Text, TextPassword.Text));
 
-                if (registerUser != null)
+                var loginUserRemote = new ApiClientImpl().RegistrationUserAsync(new UserModel
+                    { Name = TextNameUser.Text, Email = TextEmail.Text, Password = TextPassword.Text });
+                
+                if (loginUserRemote?.Result != null)
                 {
+                    TokenManager.Token = loginUserRemote.Result?.access_token;
                     MainEmptyPage nextPage = new MainEmptyPage(TextNameUser.Text);
                     PageTransition.Transition(this, nextPage);
                 }
                 else
                 {
-                    MessageBox.Show("Пользователь с такой почтой уже зарегестрирован");
+                    MessageBox.Show("Пользователь с такой почтой уже зарегестрирован!", "Ошибка", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
             else

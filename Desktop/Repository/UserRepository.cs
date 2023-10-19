@@ -16,7 +16,7 @@ namespace Desktop.Repository
 
         public static UserModel RegistrationUser(UserModel user)
         {
-            if (Users.Any(item => item.UserEmail == user.UserEmail))
+            if (Users.Any(item => item.Email == user.Email))
             {
                 return null;
             }
@@ -25,6 +25,6 @@ namespace Desktop.Repository
         }
 
         public static UserModel LoginUser(UserModel user) => 
-            Users.FirstOrDefault(item => item.UserEmail == user.UserEmail && item.UserPassword == user.UserPassword);
+            Users.FirstOrDefault(item => item.Email == user.Email && item.Password == user.Password);
     }
 }

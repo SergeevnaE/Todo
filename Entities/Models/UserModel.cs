@@ -1,16 +1,20 @@
-﻿namespace Entities.Models
+﻿using Entities.Annotations;
+
+namespace Entities.Models
 {
     public class UserModel
     {
-        public UserModel(string name, string email, string password)
+        public UserModel([CanBeNull] string name, string email, string password)
         {
-            UserName = name;
-            UserEmail = email;
-            UserPassword = password;
+            Name = name;
+            Email = email;
+            Password = password;
         }
 
-        public string UserName;
-        public string UserEmail;
-        public string UserPassword;
+        public UserModel() { }
+
+        [CanBeNull] public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }
