@@ -71,7 +71,7 @@
             Orientation="Vertical"
             HorizontalAlignment="Left" 
             VerticalAlignment="Top">
-            
+
             <TextBox
                 Name="EnterTheEmail"
                 Text=""
