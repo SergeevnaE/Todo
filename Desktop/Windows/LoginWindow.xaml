@@ -67,7 +67,7 @@
             
             <TextBox
                 Name="EnterTheEmail"
-                Text="ruslan@mail.ru"
+                Text=""
                 Style="{StaticResource CustomByTextBoxStyle}">
             </TextBox>
             
@@ -94,7 +94,7 @@
 
             <TextBox 
                 Name="EnterThePassword"
-                Text="12345678"
+                Text=""
                 Style="{StaticResource CustomByTextBoxStyle}"/>
             
             <TextBlock 
