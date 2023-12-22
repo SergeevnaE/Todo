@@ -10,8 +10,7 @@ namespace Desktop.Repository
     {
         private static readonly List<UserModel> Users = new List<UserModel>
         {
-            new UserModel("Ruslan", "ruslan@mail.ru", "12345678"),
-            new UserModel("Kirill", "kirill@mail.ru", "87654321")
+            new UserModel("Liza", "zaicaliza@gmail.ru", "lizka345_SER"),
         };
 
         public static UserModel RegistrationUser(UserModel user)

@@ -74,7 +74,7 @@
             
             <TextBox
                 Name="EnterTheEmail"
-                Text="ruslan@mail.ru"
+                Text=""
                 Width="340" 
                 Height="30" 
                 FontSize="20"
@@ -116,7 +116,7 @@
 
             <TextBox 
                 Name="EnterThePassword"
-                Text="12345678"
+                Text=""
                 Width="340" 
                 Height="30"
                 FontSize="20"
